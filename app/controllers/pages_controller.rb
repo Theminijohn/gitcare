@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def dashboard
+    unless user_signed_in?
+      redirect_to root_path
+    end
+  end
 end

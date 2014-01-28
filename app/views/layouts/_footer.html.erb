@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="#">Status</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><%= link_to "About", about_path %></li>
+      <li>
+        <%= link_to '#twitter_link' do %>
+          <i class="fa fa-twitter"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#facebook_link' do %>
+          <i class="fa fa-facebook"></i>
+        <% end %>
+      </li>
+
+    </ul>
+
+    <%= link_to root_path do %>
+      <span class="mega-octicon octicon-mark-github glyphicon glyphicon-barcode" title="Gitcare"></span>
+    <% end %>
+
+    <ul class="site-footer-links">
+      <li>© <%= Time.now.year %> Gitcare LLC</li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</div>

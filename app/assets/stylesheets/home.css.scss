@@ -1,38 +1,26 @@
-#header {
-  background: url(http://i.imgur.com/J7avev8.png) no-repeat top center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0;
-  padding: 130px 0 100px 0;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+.gtcr_bnr {
+  height: 220px;
+  background-image: url(http://i.imgur.com/MTGUIvg.png);
+  border: 1px solid;
+  border-color: #d6d7da #d5d8dd #c7c8ca;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
+  text-align: center;
+  h1 {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: -5px;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 100;
+    line-height: 1.25;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+  }
 }
-
-#header h1 {
-  font-weight: 400;
-  font-size: 120px;
-  line-height: 1;
-  letter-spacing: -5px;
-}
-
-#header .lead {
-  font-weight: 100;
-}
-
-#header p {
-  font-size: 40px;
-  font-weight: 200;
-  line-height: 1.25;
-}
-
-.lead {
-  margin-bottom: 20px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 30px;
-}
-

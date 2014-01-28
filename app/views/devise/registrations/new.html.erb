@@ -13,6 +13,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :is_company, "Are you representing a Company / Organization" %>
+        <%= f.check_box :is_company, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :username %>
         <%= f.text_field :username, class: "form-control"%>
         <span class="help-block">Please provide your Username (Twitter, Github). You can't change it once it's set</span>

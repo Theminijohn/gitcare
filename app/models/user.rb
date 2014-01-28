@@ -34,5 +34,8 @@ class User < ActiveRecord::Base
   	end
   end
 
+  def username=(value)
+    self[:username] = value.to_s.squish
+  end
 
 end

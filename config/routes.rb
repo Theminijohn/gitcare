@@ -8,6 +8,7 @@ Gitcare::Application.routes.draw do
   get 'u/:id' => 'users#show', as: :user
 
   get 'about' => 'pages#about'
+  get 'dashboard' => 'pages#dashboard'
 
   get 'disconnect' => 'users#disconnect'
 
