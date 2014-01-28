@@ -1,14 +1,19 @@
 // Profile Picture in Menu
 .nav_prof_pic {
-  max-height: 28px;
-  max-width: 28px;
+  max-height: 22px;
+  max-width: 22px;
   border: none;
   padding: 0;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  margin-right: 5px;
 }
 
 .navbar-brand {
   color: #777777!important;
+}
+
+.tooltip {
+  margin-top: -5px!important;
 }

@@ -35,3 +35,10 @@ body {
   }
 }
 
+// Dont push Nav Bar Items so far apart
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+}
+
