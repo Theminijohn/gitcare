@@ -1,0 +1,14 @@
+<div id="header">
+  <h1>gitcare</h1>
+  <p class="lead">Help inspiring Developers<p>
+
+  <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
+    <i class="fa fa-check-square"></i> Sign Up
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+<%= check_connection('Facebook')%>
+<%= check_connection('Twitter')%>
+<% end %>

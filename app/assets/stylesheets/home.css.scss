@@ -1,0 +1,40 @@
+#header {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background: black url(http://i.imgur.com/J7avev8.png) no-repeat top center scroll;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 130px 0 100px 0;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+  border-radius: 4px;
+}
+
+#header h1 {
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 1;
+  letter-spacing: -5px;
+}
+
+#header .lead {
+  font-weight: 100;
+}
+
+#header p {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 1.25;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
+}
