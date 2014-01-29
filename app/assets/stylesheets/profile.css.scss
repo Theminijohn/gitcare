@@ -19,9 +19,14 @@
   background: #fff;
 }
 
-.bottom_bg .details { padding-top: 50px;}
+.bottom_bg .details {
+  padding-top: 50px;
+}
 
-.bottom_bg .spec { font-size: 12pt; color:#333 }
+.bottom_bg .spec {
+  font-size: 12pt;
+  color: #333
+}
 
 .img_float{
   margin-top: -75px;
@@ -69,18 +74,17 @@
 
 
 
-.content {
+.profile_dash {
   opacity: 0;
   padding: 1px;
   width: 100%;
   margin: 0 auto;
-  -webkit-animation: dropfade .2s ease-in .3s forwards; /* Safari and Chrome */
+  -webkit-animation: dropfade .3s ease-in .3s forwards; /* Safari and Chrome */
   -moz-animation: dropfade .3s ease-in .3s forwards; /* Firefox */
   -ms-animation: dropfade .3s ease-in .3s forwards; /* Internet Explorer */
   -o-animation: dropfade .3s ease-in .3s forwards; /* Opera */
   animation: dropfade .3s ease-in .3s forwards;
 }
-
 
 
 .info {
@@ -92,7 +96,9 @@
   padding: 18px 0;
   font-size: 1em;
   border-top: solid 2px ;
-  border-bottom: solid 2px ; }
+  border-bottom: solid 2px ;
+  color: #777d80;
+}
 
 .me {
   img {
@@ -111,11 +117,11 @@
   border: 2px white solid;
   margin-top: -80px;
   position: relative;
-  -webkit-animation: fadein .5s ease-in .8s forwards;
-  -moz-animation: fadein .5s ease-in .8s forwards;
-  -ms-animation: fadein .5s ease-in .8s forwards;
-  -o-animation: fadein .5s ease-in .8s forwards;
-  animation: fadein .5s ease-in .8s forwards;
+  -webkit-animation: fadein .3s ease-in .3s forwards;
+  -moz-animation: fadein .3s ease-in .3s forwards;
+  -ms-animation: fadein .3s ease-in .3s forwards;
+  -o-animation: fadein .3s ease-in .3s forwards;
+  animation: fadein .3s ease-in .3s forwards;
 }
 
 .me:after {
@@ -123,12 +129,11 @@
   position: absolute;
   border-radius: 800px;
   border: 2px solid #fff;
-
-  -webkit-animation: boop .3s ease-out 1.2s forwards;
-  -moz-animation: boop .3 ease-out 1.2s forwards;
-  -ms-animation: boop .3 ease-out 1.2s forwards;
-  -o-animation: boop .3 ease-out 1.2s forwards;
-  animation: boop .3 ease-out 1.2s forwards;
+  -webkit-animation: boop .2s ease-out .6s forwards;
+  -moz-animation: boop .2 ease-out .6s forwards;
+  -ms-animation: boop .2 ease-out .6s forwards;
+  -o-animation: boop .2 ease-out .6s forwards;
+  animation: boop .2 ease-out .6s forwards;
 }
 
 @keyframes fadein {

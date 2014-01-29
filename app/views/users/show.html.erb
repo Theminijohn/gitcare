@@ -32,21 +32,18 @@
 
 
 
-<div class="sheath">
-  <div id="body-wrapper">
 
-    <div class="row">
-      <div class="content">
-        <div class="me" style="background: url(<%= @user.avatar.url(:profile) %>) center">
-          <%#= image_tag @user.avatar.url %>
-        </div>
-        <div class="info">
-          <p class="center">
-            International Baccalaureate candidate, web designer and developer, student of the multiverse. I'm a starter and I'm going to change the world.
-          </p>
-        </div>
-      </div>
+<div id="body-wrapper">
+
+  <div class="profile_dash">
+    <div class="me" style="background: url(<%= @user.avatar.url(:profile) %>) center">
+      <%#= image_tag @user.avatar.url %>
     </div>
-
+    <div class="info">
+      <p class="center">
+        International Baccalaureate candidate, web designer and developer, student of the multiverse. I'm a starter and I'm going to change the world.
+      </p>
+    </div>
   </div>
+
 </div>
