@@ -19,17 +19,17 @@
             <%=link_to(image_tag(current_user.avatar.url(:thumb), class: "nav_prof_pic") + current_user.username, current_user) %>
           </li>
           <li>
-            <%= link_to dashboard_path, class: "gtcr_tooltip", :title => "Dashboard", 'data-placement' => 'bottom'  do %>
+            <%= link_to dashboard_path, class: "gtcr_tooltip mn_tl", :title => "Dashboard", 'data-placement' => 'bottom'  do %>
               <i class="fa fa-rocket"></i>
             <% end %>
           </li>
           <li>
-            <%= link_to edit_user_registration_path, class: "gtcr_tooltip", :title => "Settings", 'data-placement' => 'bottom' do %>
+            <%= link_to edit_user_registration_path, class: "gtcr_tooltip mn_tl", :title => "Settings", 'data-placement' => 'bottom' do %>
               <i class="fa fa-cogs"></i>
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, class: "gtcr_tooltip", :title => "Logout", 'data-placement' => 'bottom', method: :delete do %>
+            <%= link_to destroy_user_session_path, class: "gtcr_tooltip mn_tl", :title => "Logout", 'data-placement' => 'bottom', method: :delete do %>
               <i class="fa fa-sign-out"></i>
             <% end %>
           </li>

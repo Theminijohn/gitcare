@@ -1,0 +1,359 @@
+.top_bg {
+  width:100%;
+  height: 220px;
+  background-image: url(http://i.imgur.com/MTGUIvg.png);
+  color: #333;
+  padding-top: 40px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.bottom_bg {
+  width:100%;
+  padding-bottom: 20px;
+  margin-top:-75px;
+  background: #fff;
+}
+
+.bottom_bg .details { padding-top: 50px;}
+
+.bottom_bg .spec { font-size: 12pt; color:#333 }
+
+.img_float{
+  margin-top: -75px;
+  width:150px;
+  height:150px;
+  margin-left: auto;
+  margin-right:auto;
+  display:block;
+  border: 8px solid #fff;
+}
+
+.card_border {
+  border-radius: 2px;
+  border: 1px solid #D8D8D8;
+  border-bottom-width: 2px;
+  border-top-width: 0;
+}
+
+
+.user_name {
+  padding: 15px 0 0 15px;
+  font-size: 28px;
+  font-weight: 250;
+}
+
+.user_recieving {
+  padding: 10px 15px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.user_profile_social {
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.user_social {
+  padding-left: 15px;
+}
+
+
+
+//==============================================================================
+
+
+
+
+.content {
+  opacity: 0;
+  padding: 1px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-animation: dropfade .2s ease-in .3s forwards; /* Safari and Chrome */
+  -moz-animation: dropfade .3s ease-in .3s forwards; /* Firefox */
+  -ms-animation: dropfade .3s ease-in .3s forwards; /* Internet Explorer */
+  -o-animation: dropfade .3s ease-in .3s forwards; /* Opera */
+  animation: dropfade .3s ease-in .3s forwards;
+}
+
+
+
+.info {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 35px auto;
+  width: 90%;
+  position: relative;
+  padding: 18px 0;
+  font-size: 1em;
+  border-top: solid 2px ;
+  border-bottom: solid 2px ; }
+
+.me {
+  img {
+    opacity: 0;
+    height: 160px;
+    width: 160px;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  opacity: 0;
+  height: 160px;
+  width: 160px;
+  border-radius: 80px;
+  margin: 0 auto;
+  background-size: cover;
+  border: 2px white solid;
+  margin-top: -80px;
+  position: relative;
+  -webkit-animation: fadein .5s ease-in .8s forwards;
+  -moz-animation: fadein .5s ease-in .8s forwards;
+  -ms-animation: fadein .5s ease-in .8s forwards;
+  -o-animation: fadein .5s ease-in .8s forwards;
+  animation: fadein .5s ease-in .8s forwards;
+}
+
+.me:after {
+  content: '';
+  position: absolute;
+  border-radius: 800px;
+  border: 2px solid #fff;
+
+  -webkit-animation: boop .3s ease-out 1.2s forwards;
+  -moz-animation: boop .3 ease-out 1.2s forwards;
+  -ms-animation: boop .3 ease-out 1.2s forwards;
+  -o-animation: boop .3 ease-out 1.2s forwards;
+  animation: boop .3 ease-out 1.2s forwards;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ninety {
+  from { width: 0; }
+  to   { width: 90%; }
+}
+@keyframes eighty {
+  from { width: 0; }
+  to   { width: 80%; }
+}
+@keyframes seventy {
+  from { width: 0; }
+  to   { width: 70%; }
+}
+@keyframes sixty {
+  from { width: 0; }
+  to   { width: 60%; }
+}
+@keyframes fifty {
+  from { width: 0; }
+  to   { width: 50%; }
+}
+@keyframes forty {
+  from { width: 0; }
+  to   { width: 40%; }
+}
+@keyframes thirty {
+  from { width: 0; }
+  to   { width: 30%; }
+}
+@keyframes twenty {
+  from { width: 0; }
+  to   { width: 20%; }
+}
+@keyframes ten {
+  from { width: 0; }
+  to   { width: 10%; }
+}
+
+@keyframes dropfade {
+  from { opacity: 0; margin-top: 90px; }
+  to   { opacity: 1; margin-top: 110px; }
+}
+
+@keyframes boop {
+  from {  width: 160px;
+    height: 160px;
+    left: -1px; top: -1px; }
+  to   {  width: 180px;
+    height: 180px;
+    left: -12px; top: -12px; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-moz-keyframes ninety {
+  from { width: 0; }
+  to   { width: 90%; }
+}
+@-moz-keyframes eighty {
+  from { width: 0; }
+  to   { width: 80%; }
+}
+@-moz-keyframes seventy {
+  from { width: 0; }
+  to   { width: 70%; }
+}
+@-moz-keyframes sixty {
+  from { width: 0; }
+  to   { width: 60%; }
+}
+@-moz-keyframes fifty {
+  from { width: 0; }
+  to   { width: 50%; }
+}
+@-moz-keyframes forty {
+  from { width: 0; }
+  to   { width: 40%; }
+}
+@-moz-keyframes thirty {
+  from { width: 0; }
+  to   { width: 30%; }
+}
+@-moz-keyframes twenty {
+  from { width: 0; }
+  to   { width: 20%; }
+}
+@-moz-keyframes ten {
+  from { width: 0; }
+  to   { width: 10%; }
+}
+
+@-moz-keyframes dropfade {
+  from { opacity: 0; margin-top: 90px; }
+  to   { opacity: 1; margin-top: 110px; }
+}
+
+@-moz-keyframes boop {
+  from {  width: 160px;
+    height: 160px;
+    left: -1px; top: -1px; }
+  to   {  width: 180px;
+    height: 180px;
+    left: -12px; top: -12px; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes ninety {
+  from { width: 0; }
+  to   { width: 90%; }
+}
+@-webkit-keyframes eighty {
+  from { width: 0; }
+  to   { width: 80%; }
+}
+@-webkit-keyframes seventy {
+  from { width: 0; }
+  to   { width: 70%; }
+}
+@-webkit-keyframes sixty {
+  from { width: 0; }
+  to   { width: 60%; }
+}
+@-webkit-keyframes fifty {
+  from { width: 0; }
+  to   { width: 50%; }
+}
+@-webkit-keyframes forty {
+  from { width: 0; }
+  to   { width: 40%; }
+}
+@-webkit-keyframes thirty {
+  from { width: 0; }
+  to   { width: 30%; }
+}
+@-webkit-keyframes twenty {
+  from { width: 0; }
+  to   { width: 20%; }
+}
+@-webkit-keyframes ten {
+  from { width: 0; }
+  to   { width: 10%; }
+}
+
+@-webkit-keyframes dropfade {
+  from { opacity: 0; margin-top: 90px; }
+  to   { opacity: 1; margin-top: 110px; }
+}
+
+@-webkit-keyframes boop {
+  from {  width: 160px;
+    height: 160px;
+    left: -1px; top: -1px; }
+  to   {  width: 190px;
+    height: 190px;
+    left: -17px; top: -17px; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-ms-keyframes ninety {
+  from { width: 0; }
+  to   { width: 90%; }
+}
+@-ms-keyframes eighty {
+  from { width: 0; }
+  to   { width: 80%; }
+}
+@-ms-keyframes seventy {
+  from { width: 0; }
+  to   { width: 70%; }
+}
+@-ms-keyframes sixty {
+  from { width: 0; }
+  to   { width: 60%; }
+}
+@-ms-keyframes fifty {
+  from { width: 0; }
+  to   { width: 50%; }
+}
+@-ms-keyframes forty {
+  from { width: 0; }
+  to   { width: 40%; }
+}
+@-ms-keyframes thirty {
+  from { width: 0; }
+  to   { width: 30%; }
+}
+@-ms-keyframes twenty {
+  from { width: 0; }
+  to   { width: 20%; }
+}
+@-ms-keyframes ten {
+  from { width: 0; }
+  to   { width: 10%; }
+}
+
+@-ms-keyframes dropfade {
+  from { opacity: 0; margin-top: 90px; }
+  to   { opacity: 1; margin-top: 110px; }
+}
+
+@-ms-keyframes boop {
+  from {  width: 160px;
+    height: 160px;
+    left: -1px; top: -1px; }
+  to   {  width: 180px;
+    height: 180px;
+    left: -12px; top: -12px; }
+}

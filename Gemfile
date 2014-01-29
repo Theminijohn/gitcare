@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'uuidtools'
 gem 'font-awesome-sass'
+gem 'friendly_id', '~> 5.0.0'
 
 # Image Handling
 gem 'paperclip', '~> 3.0'

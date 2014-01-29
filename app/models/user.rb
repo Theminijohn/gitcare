@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          :omniauth_providers => [:facebook, :twitter, :linkedin]
@@ -11,7 +10,11 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
 
   # Avatar
-  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "50x50#"}
+  has_attached_file :avatar, :styles => { :profile => "160x160#", :thumb => "50x50#"}
+
+  # Friendly_id
+  extend FriendlyId
+  friendly_id :username, :use => [:slugged, :finders]
 
   
   def has_connection_with(provider)

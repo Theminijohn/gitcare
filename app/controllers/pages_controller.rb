@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    # Only for registered users
     unless user_signed_in?
       redirect_to root_path
     end
