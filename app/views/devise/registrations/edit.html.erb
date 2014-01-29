@@ -41,6 +41,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :slogan %>
+        <%= f.text_area :slogan, class: "form-control", :placeholder => "Maximum 200 Characters" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control" %>
       </div>

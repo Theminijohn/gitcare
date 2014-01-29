@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129024812) do
+ActiveRecord::Schema.define(version: 20140129092601) do
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140129024812) do
     t.datetime "avatar_updated_at"
     t.boolean  "is_company"
     t.string   "slug"
+    t.string   "slogan"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

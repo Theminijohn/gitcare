@@ -1,49 +1,75 @@
-<!--<div class="card_border">-->
-  <!--<div class="top_bg">-->
-    <!--<h1 class="text-center"><span data-bind="text: (Name() ? Name() : UserName())"></span></h1>-->
-    <!--<h2 class="text-center"  data-bind="visible: JobTitle()"><span data-bind="text: JobTitle"></span></h2>-->
-  <!--</div>-->
-  <!--<%= image_tag @user.avatar.url, class: "img-circle img_float" %>-->
-  <!--<div class="bottom_bg">-->
+<div class="card_border">
+  <div class="top_bg">
+    <h1 class="text-center"><span data-bind="text: (Name() ? Name() : UserName())"></span></h1>
+    <h2 class="text-center"  data-bind="visible: JobTitle()"><span data-bind="text: JobTitle"></span></h2>
+  </div>
+  <%= image_tag @user.avatar.url, class: "img-circle img_float" %>
+  <div class="bottom_bg">
 
-    <!--<div class="pull-left">-->
-      <!--<div class="user_name"><%= @user.username %></div>-->
-      <!--<div class="user_social">-->
-      <!--<%= link_to '#', class: "user_profile_social" do %>-->
-        <!--<i class="fa fa-facebook"></i>-->
-      <!--<% end %>-->
-      <!--<%= link_to '#', class: "user_profile_social" do %>-->
-        <!--<i class="fa fa-twitter"></i>-->
-      <!--<% end %>-->
-      <!--<%= link_to '#', class: "user_profile_social" do %>-->
-        <!--<i class="fa fa-github"></i>-->
-      <!--<% end %>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="pull-right">-->
-      <!--<div class="user_recieving">52,03$</div>-->
-    <!--</div>-->
-
-    <!--<div class="clearfix"></div>-->
-
-  <!--</div>-->
-<!--</div>-->
-
-
-
-
-<div id="body-wrapper">
-
-  <div class="profile_dash">
-    <div class="me" style="background: url(<%= @user.avatar.url(:profile) %>) center">
-      <%#= image_tag @user.avatar.url %>
+    <div class="pull-left">
+      <div class="user_name"><%= @user.username %></div>
+      <div class="user_social">
+      <%= link_to '#', class: "user_profile_social" do %>
+        <i class="fa fa-facebook"></i>
+      <% end %>
+      <%= link_to '#', class: "user_profile_social" do %>
+        <i class="fa fa-twitter"></i>
+      <% end %>
+      <%= link_to '#', class: "user_profile_social" do %>
+        <i class="fa fa-github"></i>
+      <% end %>
     </div>
+    </div>
+
+    <div class="pull-right">
+      <div class="user_recieving">584,45$</div> <small>/month</small>
+    </div>
+
+    <div class="clearfix"></div>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="profile_dash">
+  <div class="pull-left profile_user">
+    <small></small><br>
+    <span><%= @user.username.capitalize! %></span> <br>
+
+    <ul class="prof_user_social">
+      <li>
+        <%= link_to '#' do %>
+          <i class="fa fa-facebook"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <i class="fa fa-twitter"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <i class="fa fa-github"></i>
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+  <div class="pull-right revenue_user">
+    <small>recieves</small><br>
+    <span>584,45$</span> <small>/month</small>
+  </div>
+  <div class="clearfix"></div>
+  <div class="me" style="background: url(<%= @user.avatar.url(:profile) %>) center"></div>
+  <% if @user.slogan.present? %>
     <div class="info">
       <p class="center">
-        International Baccalaureate candidate, web designer and developer, student of the multiverse. I'm a starter and I'm going to change the world.
+        <%= @user.slogan %>
       </p>
     </div>
-  </div>
-
+  <% end %>
 </div>
+

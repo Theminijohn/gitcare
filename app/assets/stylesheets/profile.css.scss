@@ -72,6 +72,45 @@
 //==============================================================================
 
 
+.profile_user {
+  padding-left: 150px;
+  padding-bottom: 60px;
+  span {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.revenue_user {
+  padding-right: 200px;
+  span {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.prof_user_social {
+  padding: 0;
+  list-style: none;
+  li {
+    float: left;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 .profile_dash {
@@ -95,9 +134,8 @@
   position: relative;
   padding: 18px 0;
   font-size: 1em;
-  border-top: solid 2px ;
-  border-bottom: solid 2px ;
-  color: #777d80;
+  border-top: solid 2px #303030;
+  border-bottom: solid 2px #303030;
 }
 
 .me {
@@ -115,7 +153,7 @@
   margin: 0 auto;
   background-size: cover;
   border: 2px white solid;
-  margin-top: -80px;
+  margin-top: -180px;
   position: relative;
   -webkit-animation: fadein .3s ease-in .3s forwards;
   -moz-animation: fadein .3s ease-in .3s forwards;
