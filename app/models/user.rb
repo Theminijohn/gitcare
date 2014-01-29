@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :presence => true
   validates :username, :presence => true, :uniqueness => true
-  validates :slogan, :length => { :maximum => 200}
+  validates :slogan, :length => { :maximum => 200 }
 
   # Avatar
   has_attached_file :avatar, :styles => { :profile => "160x160#", :thumb => "50x50#"}
