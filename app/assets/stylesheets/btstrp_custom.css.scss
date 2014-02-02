@@ -1,17 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-$body-bg:                         #f0f4f5;
-$font-family-sans-serif:                'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                          45px;
+$font-family-sans-serif:          'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:                   45px;
 $navbar-default-bg:               #f0f4f5;
-$navbar-default-brand-color:             #2980b9;
-$brand-primary: #606569;
-$jumbotron-bg:                           white;
+$navbar-default-brand-color:      #2980b9;
+$brand-primary:                   #606569;
+$jumbotron-bg:                    white;
+$brand-info:                      #2980b9;
 
 @import 'bootstrap';
 
 body {
   background: #f5f6f7 url(http://images.apple.com/ipod/images/gradient_texture20100901.jpg) repeat-x 0 0;
+}
+
+// Input Form Focus
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: none;
 }
 
 .center {

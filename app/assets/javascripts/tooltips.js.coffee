@@ -4,3 +4,4 @@ $(document).on "ready page:change", ->
                               'delay': { show: 0, hide: 0 },
                               'animation': false
   })
+
