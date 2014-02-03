@@ -79,7 +79,7 @@ Gitcare::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Required for Devise-Mailer
-  config.action_mailer.default_url_options = { :host => 'http://gitcare.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'gitcare.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "mail.gitcare.com",
