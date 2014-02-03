@@ -85,7 +85,7 @@ Gitcare::Application.configure do
     :address              => "mail.gitcare.com",
     :port                 => 25,
     :user_name            => 'info@gitcare.com',
-    :password             => '1nam-mo2',
+    :password             => '1git-care2',
     :authentication       => 'plain',
     :enable_starttls_auto => false  
   }
