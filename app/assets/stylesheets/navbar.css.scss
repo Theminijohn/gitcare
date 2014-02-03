@@ -10,6 +10,10 @@
   margin-right: 5px;
 }
 
+.navbar-default {
+  border: none!important;
+}
+
 .navbar-brand {
   color: #777777!important;
 }
@@ -18,6 +22,9 @@
   margin-top: -5px!important;
 }
 
-.mn_tl:hover {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.075);
+// Sign up Button
+.nav_sign_up_btn a {
+  height: 20px;
+  background-color: #dfdfdf;
+  box-shadow: 0 2px 0 #b9b9b9;
 }

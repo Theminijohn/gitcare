@@ -25,6 +25,7 @@ gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'letter_opener'
 end
 
 group :production do
