@@ -30,8 +30,17 @@
 
     <div class="breakline_under"></div>
 
+    <% if @user.gcv.present? %>
+      <%= @user.gcv %>
+    <% else %>
+      <% if @user == current_user %>
+        <%= link_to 'Add your Gitcare Curriculum Vitae', edit_user_registration_path %>
+      <% end %>
+    <% end %>
+
 
   </div>
+
   <div class="col-md-3">
 
     <div id="sidebar">
@@ -200,7 +209,7 @@
         <div class="modal-body">
           <div class="form-group">
             <%= f.label :website %>
-            <%= f.text_field :website, class: "form-control", :placeholder => 'http://www.yoursite.com' %>
+            <%= f.text_field :website, class: "form-control", :placeholder => 'http://yoursite.com' %>
           </div>
         </div>
         <div class="modal-footer">
