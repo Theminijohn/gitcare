@@ -1,12 +1,6 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, class: 'sign-up-conf'}) do |f| %>
+  <h1 class="sign-up-title">Didn't receive an email confirmation ?</h1>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.submit "Resend confirmation instructions" %></div>
+  <%= f.email_field :email, class: "sign-up-input", :placeholder => 'Email address', :autofocus => true %>
+  <%= f.submit "Next", class: "sign-up-button" %>
 <% end %>
-
-<%= render "devise/shared/links" %>

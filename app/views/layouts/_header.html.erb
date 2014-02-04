@@ -28,6 +28,26 @@
               <i class="fa fa-cogs"></i>
             <% end %>
           </li>
+          <% if can? :create, @status %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bullhorn" style="color: #a82b39"></i>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to statuses_path do %>
+                    <i class="fa fa-bars"></i> Statuses
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_status_path do %>
+                    <i class="fa fa-plus"></i> Create Status
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
           <li>
             <%= link_to destroy_user_session_path, class: "gtcr_tooltip mn_tl", :title => "Logout", 'data-placement' => 'bottom', method: :delete do %>
               <i class="fa fa-sign-out"></i>

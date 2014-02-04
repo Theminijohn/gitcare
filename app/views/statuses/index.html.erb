@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="status-timeline">
+    <h1 id="timeline">gitcare status</h1>
+  </div>
+  <ul class="timeline">
+
+    <% @statuses.each do |status| %>
+      <li class="<%= cycle("", "timeline-inverted") %>">
+        <div class="timeline-badge">
+          <i class="fa fa-cloud"></i>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title"><%= link_to status.title, status %></h4>
+            <p>
+              <small class="text-muted">
+                <i class="fa fa-bullhorn"></i>
+                <%= time_ago_in_words status.created_at %> ago
+              </small>
+            </p>
+          </div>
+          <div class="timeline-body">
+            <p>
+              <%= status.body %>
+            </p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+
+  </ul>
+</div>

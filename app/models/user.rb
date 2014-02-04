@@ -1,3 +1,4 @@
+require 'role_model'
 class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
@@ -11,13 +12,21 @@ class User < ActiveRecord::Base
   validates :slogan, :length => { :maximum => 200 }
 
   # Avatar
-  has_attached_file :avatar, :styles => { :profile => "160x160#", :thumb => "50x50#"}
+  has_attached_file :avatar, :styles => { :profile => "160x160#", :thumb => "50x50#"},
+                    :default_url => "http://i.imgur.com/DvWJNJI.png"
 
   # Friendly_id
   extend FriendlyId
   friendly_id :username, :use => [:slugged, :finders]
 
-  
+  # Role Model
+  # do not change the order if you add more roles later,
+  # always append them at the end!
+  include RoleModel
+  roles_attribute :roles_mask
+  roles :admin, :banned, :suspicious
+
+  # Check connection buttons on Dashboard
   def has_connection_with(provider)
     auth = self.authorizations.where(provider: provider).first
     if auth.present?
@@ -25,6 +34,16 @@ class User < ActiveRecord::Base
     else
       false
     end
+  end
+
+  # Social links in Profile
+  def has_social_links?
+    tauth = self.authorizations.where(:provider => 'Twitter')
+    fauth = self.authorizations.where(:provider => 'Facebook')
+    if tauth.present? || fauth.present?
+      return true # Return true if true
+    end
+    false # Otherwise, return false
   end
 
   def disconnect(social) 

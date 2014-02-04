@@ -1,24 +1,10 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Forgot your password?</h1>
-    </div>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-      <%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, class: "sign-up" }) do |f| %>
+  <h1 class="sign-up-title">Forgot your Password?</h1>
+  <%= devise_error_messages! %>
+  <%= f.email_field :email, class: "sign-up-input", :placeholder => 'Email address', :autofocus => true %>
+  <%= f.submit "Next", class: "sign-up-button" %>
+<% end %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
+<div class="shred_lnk">
+  <%= link_to "Didn't receive Email Confirmation?", new_user_confirmation_path %>
 </div>

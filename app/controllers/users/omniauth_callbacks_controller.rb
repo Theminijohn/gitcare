@@ -41,11 +41,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
                       :link => access_token['extra']['raw_info']['link'] }
       when "Twitter"
         uid = access_token['extra']['raw_info']['id']
-        name = access_token['extra']['raw_info']['name']
-        auth_attr = { :uid => uid, :token => access_token['credentials']['token'],
-                      :secret => access_token['credentials']['secret'], :first_name => access_token['info']['first_name'],
-                      :last_name => access_token['info']['last_name'], :name => name,
-                      :link => "http://twitter.com/#{name}" }
+        screen_name = access_token['extra']['raw_info']['screen_name']
+        auth_attr = { :uid => uid,
+                      :token => access_token['credentials']['token'],
+                      :secret => access_token['credentials']['secret'],
+                      :first_name => access_token['info']['first_name'],
+                      :last_name => access_token['info']['last_name'],
+                      :name => screen_name,
+                      :link => "http://twitter.com/#{screen_name}"
+                    }
       when 'LinkedIn'
         uid = access_token['uid']
         name = access_token['info']['name']

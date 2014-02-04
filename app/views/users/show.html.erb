@@ -1,6 +1,12 @@
 <div id="shop-header-wrapper">
-  <header class="shop-banner">
-    <img src="http://i.imgur.com/uUiQy5r.jpg">
+  <header class="shop-banner prf_cover">
+    <!-- Insert [if user has no cover]-->
+    <img src="http://i.imgur.com/5jSh4fI.jpg" style="height: 250px">
+    <% if user_signed_in? %>
+      <% if @user == current_user %>
+        <%= link_to "Edit Cover", edit_user_registration_path, class: "btn btn-custom prf_cvr_edt" %>
+      <% end %>
+    <% end %>
   </header>
 </div>
 
@@ -10,15 +16,14 @@
   <div class="col-md-9">
 
     <header class="profile header-navigation">
-		<span data-picture="img">
-      <%= image_tag @user.avatar.url, class: "avatar user-avatar" %>
-    </span>
-
+      <span data-picture="img">
+        <%= image_tag @user.avatar.url, class: "avatar user-avatar" %>
+      </span>
       <span class="title"><%= @user.username %></span>
-
     </header>
 
     <div class="breakline_under"></div>
+
 
   </div>
   <div class="col-md-3">
@@ -31,7 +36,15 @@
             <div class="member-info">
               <span class="title">About me</span>
               <div class="member-description">
-                <%= @user.slogan %>
+                <% if @user.slogan.present? %>
+                  <%= @user.slogan %>
+                <% else %>
+                  <% if current_user == @user %>
+                    Please fill out your Information.
+                  <% else %>
+                    <%= @user.username %> has not yet given us any information.
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </li>
@@ -60,7 +73,15 @@
             <dl class="list-icons">
               <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
               <dd>
-                <%= @user.city %>
+                <% if @user.city.present? %>
+                  <%= @user.city %>
+                <% else %>
+                  <% if current_user == @user %>
+                    <%= link_to 'Add a location...', edit_user_registration_path %>
+                  <% else %>
+                    Narnia
+                  <% end %>
+                <% end %>
               </dd>
             </dl>
           </li>
@@ -72,25 +93,36 @@
             </dl>
           </li>
 
-          <li class="social-links block-hover list-info-table n2">
-            <table>
-              <tbody>
-              <tr>
-                <td>
-                  <a href="#user_twitter" target="_blank" title="Twitter">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td>
-                  <a href="#user_github" target="_blank" title="Facebook">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </li>
+          <% if @user.has_social_links? %>
+            <li class="social-links block-hover list-info-table n2">
+              <table>
+                <tbody>
+                <tr>
+                  <% if @user.authorizations.where(:provider => 'Twitter').present? %>
+                    <td>
+                      <!-- Problem -->
+                      <% @user.authorizations.where(provider: 'Twitter').each do |tauth| %>
+                        <%= link_to tauth.link, :target => '_blank' do %>
+                          <i class="fa fa-twitter"></i>
+                        <% end %>
+                      <% end %>
+                    </td>
+                  <% end %>
 
+                  <% if @user.authorizations.where(:provider => 'Facebook').present? %>
+                    <td>
+                      <% @user.authorizations.where(provider: 'Facebook').each do |tauth| %>
+                        <%= link_to tauth.link, :target => '_blank' do %>
+                          <i class="fa fa-facebook"></i>
+                        <% end %>
+                      <% end %>
+                    </td>
+                  <% end %>
+                </tr>
+                </tbody>
+              </table>
+            </li>
+          <% end %>
 
         </ul>
 

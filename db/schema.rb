@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129092601) do
+ActiveRecord::Schema.define(version: 20140204010801) do
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140129092601) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "statuses", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -69,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140129092601) do
     t.boolean  "is_company"
     t.string   "slug"
     t.string   "slogan"
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

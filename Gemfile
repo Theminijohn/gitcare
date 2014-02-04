@@ -15,6 +15,10 @@ gem 'uuidtools'
 gem 'font-awesome-sass'
 gem 'friendly_id', '~> 5.0.0'
 
+# Authorization
+gem 'cancan'
+gem 'role_model'
+
 # Image Handling
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.20.0'
