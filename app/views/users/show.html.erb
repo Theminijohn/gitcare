@@ -21,6 +21,11 @@
         <%= image_tag @user.avatar.url, class: "avatar user-avatar" %>
       </span>
       <span class="title"><%= @user.username %></span>
+
+      <%= link_to '#', class: "btn btn-custom pull-right" do %>
+        <i class="fa fa-heart"></i> Support
+      <% end %>
+
     </header>
 
     <div class="breakline_under"></div>
