@@ -11,4 +11,9 @@ class PagesController < ApplicationController
       redirect_to root_path
     end
   end
+
+  # After Sign up
+  def welcome
+  end
+
 end

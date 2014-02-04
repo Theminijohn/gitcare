@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204010801) do
+ActiveRecord::Schema.define(version: 20140204101844) do
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 20140204010801) do
     t.string   "slug"
     t.string   "slogan"
     t.integer  "roles_mask"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.string   "website"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -1,10 +1,11 @@
 <div id="shop-header-wrapper">
   <header class="shop-banner prf_cover">
-    <!-- Insert [if user has no cover]-->
-    <img src="http://i.imgur.com/5jSh4fI.jpg" style="height: 250px">
+    <%= image_tag @user.cover.url(:profile), :height => 250 %>
     <% if user_signed_in? %>
       <% if @user == current_user %>
-        <%= link_to "Edit Cover", edit_user_registration_path, class: "btn btn-custom prf_cvr_edt" %>
+        <% unless @user.cover.present? %>
+          <%= link_to "Edit Cover", edit_user_registration_path, class: "btn btn-custom prf_cvr_edt" %>
+        <% end %>
       <% end %>
     <% end %>
   </header>
@@ -40,9 +41,12 @@
                   <%= @user.slogan %>
                 <% else %>
                   <% if current_user == @user %>
-                    Please fill out your Information.
+                    Hey <%= @user.first_name %>, <br>
+                    completed profiles get more credibility
+                    and have a higher chance of getting funded.  <br>
+                    <a href="" data-toggle="modal" data-target="#AddSlogan">Insert Inspiring text here... </a>
                   <% else %>
-                    <%= @user.username %> has not yet given us any information.
+                    <%= @user.username.capitalize! %> has not yet completed his Profile.
                   <% end %>
                 <% end %>
               </div>
@@ -54,13 +58,13 @@
               <tbody><tr>
                 <td>
                   <a href="#">
-                    <strong class="num-followers">549,20$</strong>
+                    <strong class="rec">00, 00$</strong>
                     <br>
                     receiving
                   </a>
                 </td>
                 <td><a href="#">
-                  <strong>259,53$</strong>
+                  <strong class="giv">00, 00$</strong>
                   <br>
                   giving
                 </a>
@@ -69,29 +73,51 @@
               </tbody></table>
           </li>
 
-          <li>
-            <dl class="list-icons">
-              <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
-              <dd>
-                <% if @user.city.present? %>
+          <% if @user.city.present? %>
+            <li>
+              <dl class="list-icons">
+                <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
+                <dd>
                   <%= @user.city %>
-                <% else %>
-                  <% if current_user == @user %>
-                    <%= link_to 'Add a location...', edit_user_registration_path %>
-                  <% else %>
-                    Narnia
-                  <% end %>
-                <% end %>
-              </dd>
-            </dl>
-          </li>
+                </dd>
+              </dl>
+            </li>
+          <% else %>
+            <% if @user == current_user %>
+              <li>
+                <dl class="list-icons">
+                  <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
+                  <dd>
+                    <a href="" data-toggle="modal" data-target="#AddLocation">Add Location...</a>
+                  </dd>
+                </dl>
+              </li>
+            <% end %>
+          <% end %>
 
-          <li>
-            <dl class="list-icons">
-              <dt><i class="fa fa-desktop"></i> Website</dt>
-              <dd><a href="#" target="_blank">gitcare.com</a></dd>
-            </dl>
-          </li>
+
+
+          <% if @user.website.present? %>
+            <li>
+              <dl class="list-icons">
+                <dt><i class="fa fa-desktop"></i> Website</dt>
+                <dd>
+                  <%= link_to @user.website, @user.website, :target => '_blank' %>
+                </dd>
+              </dl>
+            </li>
+          <% else %>
+            <% if @user == current_user %>
+              <li>
+                <dl class="list-icons">
+                  <dt><i class="fa fa-desktop"></i> Website</dt>
+                  <dd>
+                    <a href="" data-toggle="modal" data-target="#AddWebsite">Add Website...</a>
+                  </dd>
+                </dl>
+              </li>
+            <% end %>
+          <% end %>
 
           <% if @user.has_social_links? %>
             <li class="social-links block-hover list-info-table n2">
@@ -130,5 +156,75 @@
 
     </div>
 
+  </div>
+</div>
+
+
+<!-- Location Modal -->
+<div class="modal fade" id="AddLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, multipart: true }) do |f| %>
+    <div class="modal-content">
+      <div class="modal-header profile_modal">
+        <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+        <h4 class="modal-title" id="myModalLabel">Add your Location</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :city %>
+            <%= f.text_field :city, class: "form-control", :placeholder => 'e.g. New York' %>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Update", class: "btn btn-custom" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Website Modal -->
+<div class="modal fade" id="AddWebsite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, multipart: true }) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header profile_modal">
+          <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+          <h4 class="modal-title" id="myModalLabel">Add your Website</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :website %>
+            <%= f.text_field :website, class: "form-control", :placeholder => 'http://www.yoursite.com' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Update", class: "btn btn-custom" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- About me Modal -->
+<div class="modal fade" id="AddSlogan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, multipart: true }) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header profile_modal">
+          <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+          <h4 class="modal-title" id="myModalLabel">About me</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :slogan %>
+            <%= f.text_area :slogan, class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Update", class: "btn btn-custom" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

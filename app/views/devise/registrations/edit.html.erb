@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="panel-title">
-      <h1>Edit <%= resource_name.to_s.humanize %></h1>
+      <h1>Edit your Profile</h1>
     </div>
   </div>
   <div class="panel-body">
@@ -11,6 +11,11 @@
       <div class="form-group">
         <%= f.label :avatar %>
         <%= f.file_field :avatar, class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cover %>
+        <%= f.file_field :cover, class: "form-control"%>
       </div>
 
       <div class="form-group">
@@ -36,6 +41,11 @@
       <% end %>
 
       <div class="form-group">
+        <%= f.label :website, "Your Website" %>
+        <%= f.text_field :website, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :city %>
         <%= f.text_field :city, class: "form-control" %>
       </div>
@@ -53,11 +63,6 @@
       <div class="form-group">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-        <%= f.password_field :current_password, class: "form-control" %>
       </div>
 
       <div class="form-group">

@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :profile => "160x160#", :thumb => "50x50#"},
                     :default_url => "http://i.imgur.com/DvWJNJI.png"
 
+  # Cover
+  has_attached_file :cover, :styles => { :profile => "970x250#" },
+                    :default_url => "http://i.imgur.com/5jSh4fI.jpg"
+
   # Friendly_id
   extend FriendlyId
   friendly_id :username, :use => [:slugged, :finders]
