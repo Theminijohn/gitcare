@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     params[resource] &&= send(method) if respond_to?(method, true)
   end
 
+
   protected
 
   def configure_permitted_parameters

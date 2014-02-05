@@ -22,12 +22,15 @@ class RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  # After updating Profile
   def after_update_path_for(resource)
     current_user
   end
 
+  # After Email is sent for Confirmation
   def after_inactive_sign_up_path_for(resource)
     welcome_path
   end
+
 
 end

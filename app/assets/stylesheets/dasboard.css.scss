@@ -1,89 +1,229 @@
-// Revenue
-.db_revenue {
-  text-align: center;
-  border-bottom: 1px solid #95a5a6;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  span {
-    float: left;
-    border-bottom: none;
-    font-size: 18px;
-  }
-  .rvn_dtl {
-    padding-top: 30px;
-    display: block;
-    font-size: 25px;
-    font-weight: 400;
-    color: #27ae60;
-  }
-  .rvn_info {
-    float: right;
-    cursor: pointer;
-    width: 10px;
-    position: relative;
-    top: 4px;
-    text-align: right;
-    color: #b5b5b5;
-    &:hover {
-      color: #606569;
-    }
-  }
-}
-
-// Spendings
-.db_spendings {
-  text-align: center;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  span {
-    float: left;
-    border-bottom: none;
-    font-size: 18px;
-  }
-  .spnd_ttl {
-    padding-top: 30px;
-    display: block;
-    font-size: 25px;
-    font-weight: 400;
-    color: #e74c3c;
-  }
-  .spnd_info {
-    float: right;
-    cursor: pointer;
-    width: 10px;
-    position: relative;
-    top: 4px;
-    text-align: right;
-    color: #b5b5b5;
-    &:hover {
-      color: #606569;
-    }
-  }
-}
-
-// Span9 Container
-.db_bnr {
-  height: 100px;
-  background-image: url(http://i.imgur.com/MTGUIvg.png);
-  border: 1px solid;
-  border-color: #d6d7da #d5d8dd #c7c8ca;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  text-align: center;
-  h1 {
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1;
-    color: white;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-  }
+// Verify Account
+.verify_account {
   h2 {
-    margin-bottom: 20px;
-    font-size: 21px;
-    font-weight: 100;
-    line-height: 1.25;
-    color: white;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+    font-size: 16px;
   }
+  .verify_hr {
+    margin: 0 0 20px;
+    border-color: #e0dfd9;
+  }
+}
+
+// Verify Account Buttons
+.btn-service {
+  width: 196px;
+  padding-left: 50px;
+}
+
+
+/*Dashboard Module 1*/
+#dsbrd_mod .user_info {
+  white-space: nowrap;
+  height: 75px;
+  padding: 13px 10px 10px 14px;
+  line-height: 15px;
+}
+
+#dsbrd_mod a {
+  display: block;
+  float: left;
+  color: #565249;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.user_info .usr_avtr {
+  width: 50px;
+  height: 50px;
+  display: block;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+#dsbrd_mod img.usr_avtr {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.22),transparent 0 0 0,transparent 0 0 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.22),transparent 0 0 0,transparent 0 0 0;
+}
+
+/*Dashboard Module 2*/
+.icon_dtls dd {
+  width: 66%;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Share Module*/
+#share_mod .soc_ics {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 20px;
+}
+
+#share_mod .soc_ics a {
+  display: inline-block;
+  border-left: 1px solid rgba(88,86,82,.1);
+  width: 40px;
+  height: 100%;
+  position: relative;
+}
+
+#share_mod .soc_ics .facebook i {
+  margin: 8px 0 0 18px;
+}
+
+#share_mod .soc_ics .twitter i {
+  margin: 6px 0 0 14px;
+}
+
+#share_mod .soc_ics .pinterest i {
+  margin: 7px 0 0 11px;
+}
+
+/*Dashboard Revenue Module*/
+.gtcr_rvn_mod {
+  margin-bottom: 20px;
+  color: #706c66;
+  font-size: 12px;
+  border: 1px solid #E0DEDB;
+  border-radius: 3px;
+  cursor: default;
+  height: 91px;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: height .2s,opacity .1s,margin .2s;
+  -moz-transition: height .2s,opacity .1s,margin .2s;
+  -ms-transition: height .2s,opacity .1s,margin .2s;
+  -o-transition: height .2s,opacity .1s,margin .2s;
+  transition: height .2s,opacity .1s,margin .2s;
+}
+
+.gtcr_rvn_mod:after {
+  clear: both;
+}
+
+.gtcr_rvn_mod .rvn_header {
+  padding-left: 10px;
+  height: 30px;
+  line-height: 34px;
+}
+
+.gtcr_rvn_mod .rvn_numbers {
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 100%;
+  position: relative;
+  border-top: 1px solid #E0DEDB;
+  background: rgba(209,205,196,.32);
+}
+
+.gtcr_rvn_mod .rvn_numbers:before {
+  width: 8px;
+  height: 8px;
+  background: #e0dedb;
+  background: rgba(88,86,82,.1);
+  margin-left: -4px;
+  top: -4px;
+}
+
+.gtcr_rvn_mod .rvn_numbers:after {
+  width: 10px;
+  background: #f5f4f1;
+  margin-left: -5px;
+  top: -8px;
+  height: 10px;
+}
+
+.gtcr_rvn_mod .rvn_numbers:before, .gtcr_rvn_mod .rvn_numbers:after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.gtcr_rvn_mod .rvn_numbers span {
+  font-size: 25px;
+  color: #27ae60;
+}
+
+/*Dashboard Patron Module*/
+.gtcr_ptrn_mod {
+  margin-bottom: 20px;
+  color: #706c66;
+  font-size: 12px;
+  border: 1px solid #E0DEDB;
+  border-radius: 3px;
+  cursor: default;
+  height: 91px;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: height .2s,opacity .1s,margin .2s;
+  -moz-transition: height .2s,opacity .1s,margin .2s;
+  -ms-transition: height .2s,opacity .1s,margin .2s;
+  -o-transition: height .2s,opacity .1s,margin .2s;
+  transition: height .2s,opacity .1s,margin .2s;
+}
+
+.gtcr_ptrn_mod:after {
+  clear: both;
+}
+
+.gtcr_ptrn_mod .ptrn_header {
+  padding-left: 10px;
+  height: 30px;
+  line-height: 34px;
+}
+
+.gtcr_ptrn_mod .ptrn_numbers {
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 100%;
+  position: relative;
+  border-top: 1px solid #E0DEDB;
+  background: rgba(209,205,196,.32);
+}
+
+.gtcr_ptrn_mod .ptrn_numbers:before {
+  width: 8px;
+  height: 8px;
+  background: #e0dedb;
+  background: rgba(88,86,82,.1);
+  margin-left: -4px;
+  top: -4px;
+}
+
+.gtcr_ptrn_mod .ptrn_numbers:after {
+  width: 10px;
+  background: #f5f4f1;
+  margin-left: -5px;
+  top: -8px;
+  height: 10px;
+}
+
+.gtcr_ptrn_mod .ptrn_numbers:before, .gtcr_ptrn_mod .ptrn_numbers:after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.gtcr_ptrn_mod .ptrn_numbers span {
+  font-size: 25px;
+  color: #e74c3c;
 }

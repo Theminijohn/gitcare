@@ -26,6 +26,7 @@ gem 'aws-sdk', '~> 1.20.0'
 # Omniauth
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'sqlite3'

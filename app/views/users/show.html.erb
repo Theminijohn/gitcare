@@ -45,19 +45,20 @@
 
     <div id="sidebar">
 
-      <div id="widget-user-profile" class="widget">
-        <ul class="list-info truncate-vals">
-          <li class="user-details">
-            <div class="member-info">
-              <span class="title">About me</span>
-              <div class="member-description">
+
+        <ul class="gtcr_mod" id="prfl_mod">
+
+          <li class="usr_prfl">
+            <div class="user_slogan_div">
+              <a href="#" class="usr_username">About me</a>
+              <div class="usr_slogan">
                 <% if @user.slogan.present? %>
                   <%= @user.slogan %>
                 <% else %>
                   <% if current_user == @user %>
-                    Hey <%= @user.first_name %>, <br>
+                    Hey <%= @user.first_name %>,
                     completed profiles get more credibility
-                    and have a higher chance of getting funded.  <br>
+                    and have a higher chance of getting funded.  <br>  <br>
                     <a href="" data-toggle="modal" data-target="#AddSlogan">Insert Inspiring text here... </a>
                   <% else %>
                     <%= @user.username.capitalize! %> has not yet completed his Profile.
@@ -67,106 +68,89 @@
             </div>
           </li>
 
-          <li class="follow block-hover list-info-table">
-            <table>
-              <tbody><tr>
-                <td>
-                  <a href="#">
-                    <strong class="rec">00, 00 $</strong>
-                    <br>
-                    receiving
-                  </a>
-                </td>
-                <td><a href="#">
-                  <strong class="giv">00, 00 $</strong>
-                  <br>
-                  giving
-                </a>
-                </td>
-              </tr>
-              </tbody></table>
+          <li class="prf_rvn">
+            <div class="center prf_rvn_numbers">
+              $537.83 <small>/week</small>
+            </div>
           </li>
 
-          <% if @user.city.present? %>
-            <li>
-              <dl class="list-icons">
-                <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
-                <dd>
+          <!--<li class="prf_spnd">-->
+            <!--<div class="center prf_spnd_numbers">-->
+              <!--$537.83-->
+            <!--</div>-->
+          <!--</li>-->
+
+          <li class="icon_dtls">
+            <dl class="mod_icon">
+              <dt>
+                <i class="fa fa-dollar"></i> Gives
+              </dt>
+              <dd>
+                123.34$ /week
+              </dd>
+            </dl>
+          </li>
+
+          <li class="icon_dtls">
+            <dl class="mod_icon">
+              <dt>
+                <i class="glyphicon glyphicon-map-marker"></i> Location
+              </dt>
+              <dd>
+                <% if @user.city.present? %>
                   <%= @user.city %>
-                </dd>
-              </dl>
-            </li>
-          <% else %>
-            <% if @user == current_user %>
-              <li>
-                <dl class="list-icons">
-                  <dt><i class="glyphicon glyphicon-map-marker"></i> Location</dt>
-                  <dd>
+                <% else %>
+                  <% if @user == current_user %>
                     <a href="" data-toggle="modal" data-target="#AddLocation">Add Location...</a>
-                  </dd>
-                </dl>
-              </li>
-            <% end %>
-          <% end %>
+                  <% end %>
+                <% end %>
+              </dd>
+            </dl>
+          </li>
 
-
-
-          <% if @user.website.present? %>
-            <li>
-              <dl class="list-icons">
-                <dt><i class="fa fa-desktop"></i> Website</dt>
-                <dd>
+          <li class="icon_dtls">
+            <dl class="mod_icon">
+              <dt>
+                <i class="fa fa-desktop"></i> Website
+              </dt>
+              <dd>
+                <% if @user.website.present? %>
                   <%= link_to @user.website, @user.website, :target => '_blank' %>
-                </dd>
-              </dl>
-            </li>
-          <% else %>
-            <% if @user == current_user %>
-              <li>
-                <dl class="list-icons">
-                  <dt><i class="fa fa-desktop"></i> Website</dt>
-                  <dd>
+                <% else %>
+                  <% if @user == current_user %>
                     <a href="" data-toggle="modal" data-target="#AddWebsite">Add Website...</a>
-                  </dd>
-                </dl>
-              </li>
-            <% end %>
-          <% end %>
-
-          <% if @user.has_social_links? %>
-            <li class="social-links block-hover list-info-table n2">
-              <table>
-                <tbody>
-                <tr>
-                  <% if @user.authorizations.where(:provider => 'Twitter').present? %>
-                    <td>
-                      <!-- Problem -->
-                      <% @user.authorizations.where(provider: 'Twitter').each do |tauth| %>
-                        <%= link_to tauth.link, :target => '_blank' do %>
-                          <i class="fa fa-twitter"></i>
-                        <% end %>
-                      <% end %>
-                    </td>
                   <% end %>
+                <% end %>
+              </dd>
+            </dl>
+          </li>
 
-                  <% if @user.authorizations.where(:provider => 'Facebook').present? %>
-                    <td>
-                      <% @user.authorizations.where(provider: 'Facebook').each do |tauth| %>
-                        <%= link_to tauth.link, :target => '_blank' do %>
-                          <i class="fa fa-facebook"></i>
-                        <% end %>
-                      <% end %>
-                    </td>
-                  <% end %>
-                </tr>
-                </tbody>
-              </table>
-            </li>
-          <% end %>
+          <li class="gtcr_prf_social">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <a href="#" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="#" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="#" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </li>
+
 
         </ul>
-
-      </div>
 
     </div>
 

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
 
   validates :first_name, :presence => true
-  validates :username, :presence => true, :uniqueness => true
+  validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 3 }
   validates :slogan, :length => { :maximum => 200 }
 
   # Avatar
@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   include RoleModel
   roles_attribute :roles_mask
   roles :admin, :banned, :suspicious
+
 
   # Check connection buttons on Dashboard
   def has_connection_with(provider)
@@ -54,10 +55,10 @@ class User < ActiveRecord::Base
   	if social == 'facebook' 
   		auth = self.authorizations.where(provider: 'Facebook').first 
   		auth.update_attributes(token: nil, secret: nil) 
-  	else 
-  		social == 'twitter' 
+  	else
+  		social == 'twitter'
   		auth = self.authorizations.where(provider: 'Twitter').first 
-  		auth.update_attributes(token: nil, secret: nil) 
+  		auth.update_attributes(token: nil, secret: nil)
   	end
   end
 

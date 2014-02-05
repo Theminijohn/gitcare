@@ -8,32 +8,98 @@
 
   <div class="col-md-3">
 
-    <!-- Revenue -->
-    <div class="db_revenue">
-      <span>Recurring Revenue</span>
-      <%= link_to '#', class: "rvn_info" do %>
-        <i class="fa fa-info"></i>
-      <% end %>
-      <div class="rvn_dtl">54,42$</div> <small>/month</small>
+    <ul class="gtcr_mod" id="dsbrd_mod">
+
+      <li class="user_info">
+        <%= link_to(image_tag(current_user.avatar.url(:thumb), class: 'usr_avtr'), current_user) %>
+        <strong>
+          <%= link_to current_user.username.capitalize, current_user %>
+        </strong>
+      </li>
+
+      <li>
+        <dl class="mod_icon">
+          <dt>
+            <i class="fa fa-thumbs-o-up"></i>
+            100% Overall Recommended
+          </dt>
+        </dl>
+      </li>
+
+    </ul>
+
+    <ul class="gtcr_mod" id="dsbrd_mod_b">
+
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt><i class="fa fa-bars"></i> Date</dt>
+          <dd>21 Jan, 2014</dd>
+        </dl>
+      </li>
+
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt><i class="fa fa-bars"></i> Date</dt>
+          <dd>21 Jan, 2014</dd>
+        </dl>
+      </li>
+
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt><i class="fa fa-bars"></i> Date</dt>
+          <dd>21 Jan, 2014</dd>
+        </dl>
+      </li>
+
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt><i class="fa fa-bars"></i> Date</dt>
+          <dd>21 Jan, 2014</dd>
+        </dl>
+      </li>
+
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt><i class="fa fa-bars"></i> Date</dt>
+          <dd>21 Jan, 2014</dd>
+        </dl>
+      </li>
+    </ul>
+
+
+    <!-- Dashboard Revenue Module -->
+    <div class="gtcr_rvn_mod">
+      <header class="rvn_header">
+        <span><b><i class="fa fa-dollar"></i></b> Total revenue Income</span>
+      </header>
+      <div class="rvn_numbers center">
+		<span>
+			172, 03 $
+		</span>
+      </div>
     </div>
 
-    <!-- Spendings -->
-    <div class="db_spendings">
-      <span>Total Spendings</span>
-      <%= link_to '#', class: "spnd_info" do %>
-        <i class="fa fa-info"></i>
-      <% end %>
-      <div class="spnd_ttl">18,20$</div> <small>/month</small>
+    <!-- Dashboard Patron Module -->
+    <div class="gtcr_ptrn_mod">
+      <header class="ptrn_header">
+        <span><b><i class="fa fa-dollar"></i></b> Total spendings Outcome</span>
+      </header>
+      <div class="ptrn_numbers center">
+		<span>
+			172, 03 $
+		</span>
+      </div>
     </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Connections</h3>
-      </div>
-      <div class="panel-body">
-        <%= check_connection('Twitter')%>
-        <%= check_connection('Facebook')%>
-      </div>
+
+
+    <div class="verify_account">
+      <h2>Verify your Account</h2>
+      <hr class="verify_hr">
+
+      <%= check_connection('Twitter')%>
+      <%= check_connection('Facebook')%>
+
     </div>
 
 

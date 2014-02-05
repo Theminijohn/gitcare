@@ -1,0 +1,59 @@
+.gtcr_mod {
+  color: #93918e;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e0dedb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.gtcr_mod>li {
+  border-top: 1px solid #e0dedb;
+  position: relative;
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.gtcr_mod>li:first-child {
+  border-top: 0 none;
+}
+
+.gtcr_mod dl {
+  margin: 0;
+  padding: 0;
+  min-height: 18px;
+}
+
+.gtcr_mod dt {
+  position: absolute;
+  left: 0;
+  right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 35px;
+  white-space: nowrap;
+}
+
+.gtcr_mod dd {
+  margin: 0;
+  position: relative;
+  float: right;
+  width: 100%;
+  text-align: right;
+}
+
+/*List with Icon*/
+.gtcr_mod dl.mod_icon {
+  padding-left: 25px;
+}
+
+.gtcr_mod dl.mod_icon dt i {
+  position: absolute;
+  font-size: 14px;
+  top: 2px;
+  left: 10px;
+}

@@ -5,7 +5,8 @@ Gitcare::Application.routes.draw do
   devise_for :users, :path => '',
                      :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' },
                      :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
-                                       :registrations => "registrations" }
+                                       :registrations => "registrations",
+                                       :sessions => "sessions"}
 
   get 'u/:id' => 'users#show', as: :user
 

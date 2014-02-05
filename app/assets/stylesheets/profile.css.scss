@@ -54,174 +54,6 @@ img.avatar, .avatar img {
   white-space: nowrap;
 }
 
-
-// Sidebar
-#sidebar .widget {
-  position: relative;
-  padding-bottom: 20px;
-}
-
-.list-info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.list-info, .sidebar-module {
-  color: #93918e;
-  border: 1px solid #e0dedb;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.list-info>li:first-child {
-  border-top: 0 none;
-}
-
-.list-info>li {
-  border-top: 1px solid #e0dedb;
-  position: relative;
-  margin: 0;
-  padding: 8px 10px;
-  font-size: 12px;
-  line-height: 19px;
-}
-
-#widget-user-profile .member-info {
-  padding: 6px 3px;
-}
-
-.member-info .title {
-  display: block;
-  line-height: 14px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: rgba(86,82,73,.9);
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 700;
-}
-
-.member-description {
-  margin-bottom: 6px;
-  line-height: 20px;
-  padding-right: 10px;
-  color: #89857e;
-  width: 205px;
-  word-wrap: break-word;
-}
-
-.list-info-table {
-  padding: 0!important;
-}
-
-.rec, .giv {
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-}
-
-
-.list-info-table table {
-  width: 100%;
-}
-
-#widget-user-profile .follow td {
-  width: 50%;
-  line-height: 16px;
-}
-.list-info-table td {
-  position: relative;
-  text-align: center;
-  border-right: 1px solid #e0dedb;
-}
-
-#widget-user-profile .follow td a {
-  text-decoration: none;
-  display: block;
-  width: auto;
-  height: 100%;
-  padding: 12px 0;
-  color: #706c66;
-}
-
-#widget-user-profile .follow td strong {
-  font-size: 15px;
-  line-height: 16px;
-}
-
-.list-info-table td:last-child {
-  border-right: 0 none;
-}
-
-#widget-user-profile .follow td:hover {
-  background-color: #e6e6e8;
-}
-
-.list-info dl.list-icons {
-  padding-left: 25px;
-}
-.list-info dl {
-  margin: 0;
-  padding: 0;
-  min-height: 18px;
-}
-
-.list-info dt {
-  position: absolute;
-  left: 0;
-  right: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-left: 35px;
-  font-weight: 400;
-}
-
-.list-info dl.list-icons dt i {
-  font-size: 14px;
-  position: absolute;
-  left: 10px;
-}
-
-.list-info.truncate-vals dd {
-  width: 66%;
-  height: 19px;
-  text-align: right;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.list-info dd {
-  margin: 0;
-  position: relative;
-  float: right;
-  width: 100%;
-  text-align: right;
-}
-
-// SOcial
-#widget-user-profile .social-links {
-  line-height: 0;
-}
-
-#widget-user-profile .social-links a {
-  padding: 6px 0;
-}
-
-.block-hover a {
-  display: block;
-}
-
-#widget-user-profile .social-links i {
-  font-size: 15px;
-  color: #89857e;
-}
-
-.social-links td {
-  width: 50%;
-  &:hover {
-    background-color: #e6e6e8;
-  }
-}
-
 // Edit Cover Button on Hover
 .prf_cvr_edt {
   position: absolute;
@@ -243,3 +75,92 @@ img.avatar, .avatar img {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
   }
 }
+
+/*Profile Module*/
+#prfl_mod .usr_prfl .usr_slogan {
+  font-size: 12px;
+  margin-bottom: 6px;
+  line-height: 20px;
+  color: #89857e;
+  word-wrap: break-word;
+}
+
+#prfl_mod .usr_prfl .usr_username {
+  display: block;
+  line-height: 14px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: rgba(86,82,73,0.9);
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
+#prfl_mod dt {
+  position: absolute;
+  left: 0;
+  right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 32px;
+  font-weight: 400;
+}
+
+#prfl_mod .user_slogan_div {
+  padding: 6px 3px;
+}
+
+.prf_rvn .prf_rvn_numbers {
+  font-size: 30px;
+  padding: 10px 0 10px 0;
+}
+
+.prf_spnd .prf_spnd_numbers {
+  font-size: 20px;
+  padding: 10px 0 10px 0;
+}
+
+.gtcr_prf_social {
+  line-height: 0;
+  width: 100%;
+  padding: 0!important;
+}
+
+.gtcr_prf_social table {
+  width: 100%;
+}
+
+.gtcr_prf_social td {
+  position: relative;
+  text-align: center;
+  border-right: 1px solid #e0dedb;
+}
+
+.gtcr_prf_social td:last-child {
+  border-right: none;
+}
+
+.gtcr_prf_social a {
+  padding: 6px 0;
+  display: block;
+}
+
+.gtcr_prf_social i {
+  font-size: 18px;
+}
+
+.icon_dtls dd {
+  width: 66%;
+  height: 19px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon_dtls i {
+  font-size: 14px;
+  position: absolute;
+  left: 10px;
+}
+
+
+
