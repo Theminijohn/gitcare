@@ -11,8 +11,9 @@ $brand-info:                      #2980b9;
 @import 'bootstrap';
 
 body {
-  background: #f5f6f7 url(http://images.apple.com/ipod/images/gradient_texture20100901.jpg) repeat-x 0 0;
+  background: url("http://i.imgur.com/GXeVwWj.png") repeat;
 }
+
 
 // Input Form Focus
 .form-control:focus {
@@ -30,7 +31,7 @@ body {
 
 // Navbar
 .navbar-default {
-  background: #f5f6f7 url(http://images.apple.com/ipod/images/gradient_texture20100901.jpg) repeat-x 0 0;
+  background: url("//viggo.zendesk.tv/assets/images/l-chrome/master-bg2.png") repeat;
 }
 
 // Here we say: On viewports 1200px or larger - set container max-width to 970px.
