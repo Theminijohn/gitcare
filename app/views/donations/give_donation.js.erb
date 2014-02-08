@@ -1,0 +1,5 @@
+<% if @error.present? %>
+  $('.notices').hide().html('<%= @error %>').fadeIn('slow').delay(2000).hide(1);
+<% else %>
+  $('.notices').hide().html('Donation sent').fadeIn('slow').delay(2000).hide(1);
+<% end %>

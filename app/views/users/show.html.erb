@@ -39,6 +39,20 @@
     <% end %>
 
 
+    <div class="col-md-6">
+      <h3>donate to <%= @user.username %></h3>
+      <%= form_for @user.outgoing_donations.new, url: give_donation_path(recipient_id: @user.id), html: {remote: true, role: 'form'} do |f| %>
+        <div class="form-group">
+        <%= f.number_field :ammount, class: 'form-control', min: 0 %>
+        </div>
+        <div class="form-group">
+        <%= f.select :donation_type, @donation_types, class: 'form-control', min: 0 %>
+        </div>
+        <%= f.submit 'Donate', class: 'btn btn-custom' %>
+      <% end %>
+      <div class="notices"></div>
+    </div>
+
   </div>
 
   <div class="col-md-3">
@@ -70,7 +84,7 @@
 
           <li class="prf_rvn">
             <div class="center prf_rvn_numbers">
-              $537.83 <small>/week</small>
+              <%= humanized_money_with_symbol @user.wallet.ammount %> <small>/week</small>
             </div>
           </li>
 

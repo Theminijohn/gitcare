@@ -2,8 +2,26 @@
 
   <div class="col-md-9">
 
-    Hey Giannakis
+    Hey <%= current_user.first_name %>
 
+    <table class="table">
+      <caption><h3>Incomming donations</h3></caption>
+      <thead>
+        <tr>
+          <th>donator</th>
+          <th>ammount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.incoming_donations.each do |donation| %>
+          <tr>
+            <td><%= donation.donator %></td>
+            <td><%= donation.ammount %></td>
+            <td><%= Donation::TYPE(donation.donation_type) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 
   <div class="col-md-3">

@@ -23,4 +23,6 @@ Gitcare::Application.routes.draw do
   # Social Connections
   get 'disconnect' => 'users#disconnect'
 
+  match 'give_donation' => 'donations#give_donation', via: [:get, :post]
+
 end
