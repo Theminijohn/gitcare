@@ -19,6 +19,7 @@
 .project
 .DS_Store
 .idea
+.rvmrc
 
 # Ignore Paperclip uploaded files
 /public/system
