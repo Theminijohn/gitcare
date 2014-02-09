@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   after_create :create_wallet
 
   def create_wallet
-    Wallet.create(user_id: self.id)
+    Wallet.create(user_id: self.id, total_ammount: 0)
   end
 
   def donate_to(recipient, ammount)
