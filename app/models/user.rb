@@ -44,7 +44,9 @@ class User < ActiveRecord::Base
     self.outgoing_donations.create(wallet_id: self.wallet.id, recipient_id: recipient.id,
       recipient_wallet_id: recipient.wallet.id, ammount: ammount, donation_type: 1)
     #update donator wallet
-    # self.wallet.total_ammount =
+    self.wallet.decrement(:total_ammount, by = ammount.to_i).save
+    #update recipient wallet
+    recipient.wallet.increment(:total_ammount, by = ammount.to_i).save
   end
 
   # Check connection buttons on Dashboard
