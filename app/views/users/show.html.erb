@@ -22,8 +22,20 @@
       </span>
       <span class="title"><%= @user.username %></span>
 
-      <%= link_to '#', class: "btn btn-custom pull-right" do %>
-        <i class="fa fa-heart"></i> Support
+      <% if @user.patron_modus? %>
+        <div class="prf_ptrn_mds pull-right">
+          <span>Is here as a Patron</span>
+        </div>
+      <% else %>
+        <% if user_signed_in? %>
+          <%= link_to '#', class: "btn btn-custom pull-right", 'data-toggle' => 'modal', 'data-target' => '#DonationModal' do %>
+            <i class="fa fa-heart"></i> Support
+          <% end %>
+        <% else %>
+          <%= link_to '#', class: "btn btn-custom pull-right", 'data-toggle' => 'modal', 'data-target' => '#SignInToSupport' do %>
+            <i class="fa fa-heart"></i> Support
+          <% end %>
+        <% end %>
       <% end %>
 
     </header>
@@ -38,134 +50,17 @@
       <% end %>
     <% end %>
 
-    <% if current_user != @user %>
-    <div class="col-md-6">
-      <h3>donate to <%= @user.username %></h3>
-      <%= form_for @user.outgoing_donations.new, url: give_donation_path(recipient_id: @user.id), html: {remote: true, role: 'form'} do |f| %>
-        <div class="form-group">
-        <%= f.number_field :ammount, class: 'form-control', min: 0 %>
-        </div>
-        <div class="form-group">
-        <%= f.select :donation_type, @donation_types, class: 'form-control', min: 0 %>
-        </div>
-        <%= f.submit 'Donate', class: 'btn btn-custom' %>
-      <% end %>
-      <div class="notices"></div>
-    </div>
-    <% end %>
-
   </div>
 
   <div class="col-md-3">
 
     <div id="sidebar">
 
-
-        <ul class="gtcr_mod" id="prfl_mod">
-
-          <li class="usr_prfl">
-            <div class="user_slogan_div">
-              <a href="#" class="usr_username">About me</a>
-              <div class="usr_slogan">
-                <% if @user.slogan.present? %>
-                  <%= @user.slogan %>
-                <% else %>
-                  <% if current_user == @user %>
-                    Hey <%= @user.first_name %>,
-                    completed profiles get more credibility
-                    and have a higher chance of getting funded.  <br>  <br>
-                    <a href="" data-toggle="modal" data-target="#AddSlogan">Insert Inspiring text here... </a>
-                  <% else %>
-                    <%= @user.username.capitalize! %> has not yet completed his Profile.
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </li>
-
-          <li class="prf_rvn">
-            <div class="center prf_rvn_numbers">
-              <%= humanized_money_with_symbol @user.wallet.ammount %> <small>/week</small>
-            </div>
-          </li>
-
-          <!--<li class="prf_spnd">-->
-            <!--<div class="center prf_spnd_numbers">-->
-              <!--$537.83-->
-            <!--</div>-->
-          <!--</li>-->
-
-          <li class="icon_dtls">
-            <dl class="mod_icon">
-              <dt>
-                <i class="fa fa-dollar"></i> Gives
-              </dt>
-              <dd>
-                123.34$ /week
-              </dd>
-            </dl>
-          </li>
-
-          <li class="icon_dtls">
-            <dl class="mod_icon">
-              <dt>
-                <i class="glyphicon glyphicon-map-marker"></i> Location
-              </dt>
-              <dd>
-                <% if @user.city.present? %>
-                  <%= @user.city %>
-                <% else %>
-                  <% if @user == current_user %>
-                    <a href="" data-toggle="modal" data-target="#AddLocation">Add Location...</a>
-                  <% end %>
-                <% end %>
-              </dd>
-            </dl>
-          </li>
-
-          <li class="icon_dtls">
-            <dl class="mod_icon">
-              <dt>
-                <i class="fa fa-desktop"></i> Website
-              </dt>
-              <dd>
-                <% if @user.website.present? %>
-                  <%= link_to @user.website, @user.website, :target => '_blank' %>
-                <% else %>
-                  <% if @user == current_user %>
-                    <a href="" data-toggle="modal" data-target="#AddWebsite">Add Website...</a>
-                  <% end %>
-                <% end %>
-              </dd>
-            </dl>
-          </li>
-
-          <li class="gtcr_prf_social">
-            <table>
-              <tbody>
-              <tr>
-                <td>
-                  <a href="#" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td>
-                  <a href="#" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </td>
-                <td>
-                  <a href="#" target="_blank">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </li>
-
-
-        </ul>
+      <% if @user.patron_modus? %>
+        <%= render 'users/patron' %>
+      <% else %>
+        <%= render 'users/normal' %>
+      <% end %>
 
     </div>
 
@@ -241,3 +136,76 @@
     <% end %>
   </div>
 </div>
+
+<!-- Company Modal -->
+<div class="modal fade" id="AddCompany" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, multipart: true }) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header profile_modal">
+          <i class="fa fa-times close" data-dismiss="modal" aria-hidden="true"></i>
+          <h4 class="modal-title" id="myModalLabel">Add your Company</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :company %>
+            <%= f.text_field :company, class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Update", class: "btn btn-custom" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<!-- Donation Modal -->
+<div class="modal fade" id="DonationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header profile_modal">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Support <%= @user.username %></h4>
+      </div>
+      <div class="modal-body">
+        <% if current_user != @user %>
+          <div class="col-md-6">
+            <h3>donate to <%= @user.username %></h3>
+            <%= form_for @user.outgoing_donations.new, url: give_donation_path(recipient_id: @user.id), html: {remote: true, role: 'form'} do |f| %>
+              <div class="form-group">
+                <%= f.number_field :ammount, class: 'form-control', min: 0 %>
+              </div>
+              <div class="form-group">
+                <%= f.select :donation_type, @donation_types, class: 'form-control', min: 0 %>
+              </div>
+              <%= f.submit 'Donate', class: 'btn btn-custom' %>
+            <% end %>
+            <div class="notices"></div>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Donation Modal -->
+<div class="modal fade" id="SignInToSupport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header profile_modal">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Sign in to Support <%= @user.username %></h4>
+      </div>
+      <div class="modal-body">
+        Whats up
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -3,7 +3,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
-gem 'therubyracer', platforms: :ruby  # needed on ubuntu develoment, mine at leas, has to do with sass probably
+gem 'therubyracer', platforms: :ruby  # Ubuntu Development
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -18,7 +18,7 @@ gem 'friendly_id', '~> 5.0.0'
 
 # my gems ###
 gem 'thin'                                 # better webserver
-gem 'quiet_assets', :group => :development # hide assets from development logs
+gem 'quiet_assets', :group => :development # hide assets from development logs !!!!!!!
 gem 'money-rails'                          # money conversions from integers
 #############
 

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+
+  # Users who are not Signed in should be able to browse
+  # other Users.
+  # before_filter :authenticate_user!
 
   def show
     @user = User.find(params[:id])

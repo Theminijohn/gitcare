@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :username, :is_company, :slug, :roles_mask]
-    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :username, :company, :city, :avatar, :is_company, :slug, :slogan, :roles_mask, :cover, :website, :gcv]
+    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :username, :company, :city, :avatar, :is_company, :slug, :slogan, :roles_mask, :cover, :website, :gcv, :hide_donations, :patron_modus]
   end
 
 end

@@ -41,6 +41,14 @@
       <% end %>
 
       <div class="form-group">
+        <%= f.check_box :patron_modus %>&nbsp;&nbsp; <span>Become Total Patron?</span>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :hide_donations %>&nbsp;&nbsp; <span>Hide my Total Givings</span>
+      </div>
+
+      <div class="form-group">
         <%= f.label :website, "Your Website" %>
         <%= f.text_field :website, class: "form-control" %>
       </div>

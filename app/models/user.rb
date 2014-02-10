@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :confirmable, :omniauth_providers => [:facebook, :twitter, :linkedin]
 
   has_many :authorizations, :dependent => :destroy
+
+  # Wallet
   has_one :wallet
   has_many :outgoing_donations, class_name: 'Donation', foreign_key: :user_id
   has_many :incoming_donations, class_name: 'Donation', foreign_key: :recipient_id

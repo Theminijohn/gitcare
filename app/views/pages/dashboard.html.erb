@@ -15,13 +15,33 @@
       <tbody>
         <% current_user.incoming_donations.each do |donation| %>
           <tr>
-            <td><%= donation.donator %></td>
+            <td><%= donation.donator.username %></td>
             <td><%= donation.ammount %></td>
-            <td><%= Donation::TYPE(donation.donation_type) %></td>
+            <td><%= Donation::TYPE[donation.donation_type] %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <table class="table">
+      <caption><h3>Outgoing donations</h3></caption>
+      <thead>
+      <tr>
+        <th>Donation To</th>
+        <th>ammount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% current_user.outgoing_donations.each do |donation| %>
+        <tr>
+          <td><%= donation.donator.username %></td>
+          <td><%= donation.ammount %></td>
+          <td><%= Donation::TYPE[donation.donation_type] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
   </div>
 
   <div class="col-md-3">
@@ -45,6 +65,18 @@
       </li>
 
     </ul>
+
+    <!-- Dashboard Wallet Module -->
+    <div class="gtcr_wllt_mod">
+      <header class="wllt_header">
+        <span><b><i class="fa fa-dollar"></i></b> Total Wallet Ammount</span>
+      </header>
+      <div class="wllt_numbers center">
+		<span>
+			172, 03 $
+		</span>
+      </div>
+    </div>
 
     <ul class="gtcr_mod" id="dsbrd_mod_b">
 

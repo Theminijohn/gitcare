@@ -227,3 +227,74 @@
   font-size: 25px;
   color: #e74c3c;
 }
+
+
+/*Dashboard Wallet Module*/
+.gtcr_wllt_mod {
+  margin-bottom: 20px;
+  color: #706c66;
+  font-size: 12px;
+  border: 1px solid #E0DEDB;
+  border-radius: 3px;
+  cursor: default;
+  height: 91px;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: height .2s,opacity .1s,margin .2s;
+  -moz-transition: height .2s,opacity .1s,margin .2s;
+  -ms-transition: height .2s,opacity .1s,margin .2s;
+  -o-transition: height .2s,opacity .1s,margin .2s;
+  transition: height .2s,opacity .1s,margin .2s;
+}
+
+.gtcr_wllt_mod:after {
+  clear: both;
+}
+
+.gtcr_wllt_mod .wllt_header {
+  padding-left: 10px;
+  height: 30px;
+  line-height: 34px;
+}
+
+.gtcr_wllt_mod .wllt_numbers {
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 100%;
+  position: relative;
+  border-top: 1px solid #E0DEDB;
+  background: rgba(209,205,196,.32);
+}
+
+.gtcr_wllt_mod .wllt_numbers:before {
+  width: 8px;
+  height: 8px;
+  background: #e0dedb;
+  background: rgba(88,86,82,.1);
+  margin-left: -4px;
+  top: -4px;
+}
+
+.gtcr_wllt_mod .wllt_numbers:after {
+  width: 10px;
+  background: #f5f4f1;
+  margin-left: -5px;
+  top: -8px;
+  height: 10px;
+}
+
+.gtcr_wllt_mod .wllt_numbers:before, .gtcr_wllt_mod .wllt_numbers:after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.gtcr_wllt_mod .wllt_numbers span {
+  font-size: 25px;
+  //color: #27ae60;
+}

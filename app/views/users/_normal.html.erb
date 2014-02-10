@@ -1,0 +1,152 @@
+<ul class="gtcr_mod" id="prfl_mod">
+
+  <li class="usr_prfl">
+    <div class="user_slogan_div">
+      <span class="usr_username">
+        <% if @user.is_company? %>
+          About us
+        <% else %>
+          About me
+        <% end %>
+      </span>
+      <div class="usr_slogan">
+        <% if @user.slogan.present? %>
+          <%= @user.slogan %>
+        <% else %>
+          <% if current_user == @user %>
+            Hey <%= @user.first_name %>, <br>
+            completed profiles get more credibility
+            and have a higher chance of getting funded.  <br>
+            <a href="" data-toggle="modal" data-target="#AddSlogan">Insert Inspiring text here... </a>
+          <% else %>
+            <%= @user.username.capitalize! %> has not yet completed his Profile.
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+
+  <li class="prf_rvn">
+    <div class="center prf_rvn_numbers">
+      <!-- Only Incoming Donations-->
+      <%= humanized_money_with_symbol @user.incoming_donations.sum(:ammount) %> <small>/week</small>
+    </div>
+  </li>
+
+  <li class="icon_dtls">
+    <dl class="mod_icon">
+      <dt>
+        <i class="fa fa-dollar"></i> Gives
+      </dt>
+      <dd>
+        <% if @user.hide_donations? %>
+          anonymously
+        <% else %>
+          <!-- Only Outgoing Donations -->
+          123.34$ /week
+        <% end %>
+      </dd>
+    </dl>
+  </li>
+
+  <% if @user.city.present? %>
+    <li class="icon_dtls">
+      <dl class="mod_icon">
+        <dt>
+          <i class="glyphicon glyphicon-map-marker"></i> Location
+        </dt>
+        <dd>
+          <%= @user.city %>
+        </dd>
+      </dl>
+    </li>
+  <% else %>
+    <% if @user == current_user %>
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt>
+            <i class="glyphicon glyphicon-map-marker"></i> Location
+          </dt>
+          <dd>
+            <a href="" data-toggle="modal" data-target="#AddLocation">Add Location...</a>
+          </dd>
+        </dl>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% if @user.is_company? %>
+    <li class="icon_dtls">
+      <dl class="mod_icon">
+        <dt>
+          <i class="fa fa-flag"></i> Company
+        </dt>
+        <dd>
+          <% if @user.company.present? %>
+            <%= @user.company %>
+          <% else %>
+            <% if @user == current_user %>
+              <a href="" data-toggle="modal" data-target="#AddCompany">Add Company...</a>
+            <% end %>
+          <% end %>
+        </dd>
+      </dl>
+    </li>
+  <% end %>
+
+  <% if @user.website.present? %>
+    <li class="icon_dtls">
+      <dl class="mod_icon">
+        <dt>
+          <i class="fa fa-desktop"></i> Website
+        </dt>
+        <dd>
+          <%= link_to @user.website, @user.website, :target => '_blank' %>
+        </dd>
+      </dl>
+    </li>
+  <% else %>
+    <% if @user == current_user %>
+      <li class="icon_dtls">
+        <dl class="mod_icon">
+          <dt>
+            <i class="fa fa-desktop"></i> Website
+          </dt>
+          <dd>
+            <a href="" data-toggle="modal" data-target="#AddWebsite">Add Website...</a>
+          </dd>
+        </dl>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% if @user.has_social_links? %>
+    <li class="gtcr_prf_social">
+      <table>
+        <tbody>
+        <tr>
+          <% if @user.authorizations.where(provider: 'Twitter').present? %>
+            <td>
+              <% @user.authorizations.where(provider: 'Twitter').each do |tauth| %>
+                <%= link_to tauth.link, :target => '_blank' do %>
+                  <i class="fa fa-twitter"></i>
+                <% end %>
+              <% end %>
+            </td>
+          <% end %>
+          <% if @user.authorizations.where(provider: 'Facebook').present? %>
+            <td>
+              <% @user.authorizations.where(provider: 'Facebook').each do |tauth| %>
+                <%= link_to tauth.link, :target => '_blank' do %>
+                  <i class="fa fa-facebook"></i>
+                <% end %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+  <% end %>
+
+</ul>
