@@ -72,9 +72,9 @@
         <span><b><i class="fa fa-dollar"></i></b> Total Wallet Ammount</span>
       </header>
       <div class="wllt_numbers center">
-		<span>
-			172, 03 $
-		</span>
+      <span>
+        <%= humanized_money_with_symbol current_user.total_convert %>
+      </span>
       </div>
     </div>
 
@@ -123,9 +123,9 @@
         <span><b><i class="fa fa-dollar"></i></b> Total revenue Income</span>
       </header>
       <div class="rvn_numbers center">
-		<span>
-			172, 03 $
-		</span>
+      <span>
+        <%= humanized_money_with_symbol current_user.incoming_convert %>
+      </span>
       </div>
     </div>
 
@@ -135,9 +135,9 @@
         <span><b><i class="fa fa-dollar"></i></b> Total spendings Outcome</span>
       </header>
       <div class="ptrn_numbers center">
-		<span>
-			172, 03 $
-		</span>
+      <span>
+        <%= humanized_money_with_symbol current_user.outgoing_convert %>
+      </span>
       </div>
     </div>
 

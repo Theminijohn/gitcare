@@ -29,7 +29,7 @@
   <li class="prf_rvn">
     <div class="center prf_rvn_numbers">
       <!-- Only Incoming Donations-->
-      <%= humanized_money_with_symbol @user.incoming_donations.sum(:ammount) %> <small>/week</small>
+      <%= humanized_money_with_symbol @user.incoming_convert %> <small>/week</small>
     </div>
   </li>
 
@@ -43,7 +43,7 @@
           anonymously
         <% else %>
           <!-- Only Outgoing Donations -->
-          123.34$ /week
+          <%= humanized_money_with_symbol @user.outgoing_convert %> /week
         <% end %>
       </dd>
     </dl>

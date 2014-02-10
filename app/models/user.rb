@@ -12,6 +12,21 @@ class User < ActiveRecord::Base
   has_many :outgoing_donations, class_name: 'Donation', foreign_key: :user_id
   has_many :incoming_donations, class_name: 'Donation', foreign_key: :recipient_id
 
+  # Convert to 0.00
+  # ----------------------------------------------------------------------------
+  def incoming_convert
+    self.incoming_donations.sum(:ammount) / 100.00
+  end
+
+  def outgoing_convert
+    self.outgoing_donations.sum(:ammount) / 100.00
+  end
+
+  def total_convert
+    self.wallet.total_ammount / 100.00
+  end
+  # ----------------------------------------------------------------------------
+
   validates :first_name, :presence => true
   validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 3 }
   validates :slogan, :length => { :maximum => 200 }
