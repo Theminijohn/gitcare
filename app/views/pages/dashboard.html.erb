@@ -66,7 +66,6 @@
     </div>
 
     <ul class="gtcr_mod" id="dsbrd_mod_b">
-
       <% current_user.outgoing_donations.last(5).each do |donation| %>
         <li class="icon_dtls">
           <dl class="mod_icon">
@@ -75,7 +74,9 @@
           </dl>
         </li>
       <% end %>
+    </ul>
 
+    <ul class="gtcr_mod" id="dsbrd_mod_b">
       <% current_user.incoming_donations.last(5).each do |donation| %>
         <li class="icon_dtls">
           <dl class="mod_icon">
@@ -84,7 +85,6 @@
           </dl>
         </li>
       <% end %>
-
     </ul>
 
 

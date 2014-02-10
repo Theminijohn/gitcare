@@ -29,7 +29,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   # After Email is sent for Confirmation
   def after_inactive_sign_up_path_for(resource)
-    welcome_path
+    almost_done_path
   end
 
 

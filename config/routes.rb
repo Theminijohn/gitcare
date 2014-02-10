@@ -19,6 +19,7 @@ Gitcare::Application.routes.draw do
   # Pages
   get 'about' => 'pages#about'
   get 'dashboard' => 'pages#dashboard'
+  get 'almost_done' => 'pages#almost_done'
 
   # Social Connections
   get 'disconnect' => 'users#disconnect'

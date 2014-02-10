@@ -4,3 +4,4 @@ $ ->
     -> $('.prf_cvr_edt').fadeIn(400)
     -> $('.prf_cvr_edt').fadeOut(200)
   )
+

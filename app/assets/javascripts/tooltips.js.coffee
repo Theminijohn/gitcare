@@ -5,3 +5,4 @@ $(document).on "ready page:change", ->
                               'animation': false
   })
 
+
