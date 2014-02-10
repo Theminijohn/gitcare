@@ -2,45 +2,32 @@
 
   <div class="col-md-9">
 
-    Hey <%= current_user.first_name %>
+    <div class="center">
+      <h3>Outgoing Donations</h3>
+    </div>
 
-    <table class="table">
-      <caption><h3>Incomming donations</h3></caption>
-      <thead>
-        <tr>
-          <th>donator</th>
-          <th>ammount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% current_user.incoming_donations.each do |donation| %>
-          <tr>
-            <td><%= donation.donator.username %></td>
-            <td><%= donation.ammount %></td>
-            <td><%= Donation::TYPE[donation.donation_type] %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <table class="table">
-      <caption><h3>Outgoing donations</h3></caption>
+    <table class="table table-striped">
       <thead>
       <tr>
-        <th>Donation To</th>
-        <th>ammount</th>
+        <th>Recipient</th>
+        <th>Ammount</th>
+        <th>Type</th>
       </tr>
       </thead>
       <tbody>
       <% current_user.outgoing_donations.each do |donation| %>
         <tr>
-          <td><%= donation.donator.username %></td>
-          <td><%= donation.ammount %></td>
+          <td><%= donation.recipient_id %></td>
+          <td><%= humanized_money_with_symbol donation.ammount / 100.00 %></td>
           <td><%= Donation::TYPE[donation.donation_type] %></td>
         </tr>
       <% end %>
       </tbody>
-    </table>
+     </table>
+
+
+
+
 
   </div>
 
@@ -80,40 +67,24 @@
 
     <ul class="gtcr_mod" id="dsbrd_mod_b">
 
-      <li class="icon_dtls">
-        <dl class="mod_icon">
-          <dt><i class="fa fa-bars"></i> Date</dt>
-          <dd>21 Jan, 2014</dd>
-        </dl>
-      </li>
+      <% current_user.outgoing_donations.last(5).each do |donation| %>
+        <li class="icon_dtls">
+          <dl class="mod_icon">
+            <dt><i class="fa fa-arrow-right"></i> Outgoing</dt>
+            <dd><%= humanized_money_with_symbol donation.ammount / 100.00 %></dd>
+          </dl>
+        </li>
+      <% end %>
 
-      <li class="icon_dtls">
-        <dl class="mod_icon">
-          <dt><i class="fa fa-bars"></i> Date</dt>
-          <dd>21 Jan, 2014</dd>
-        </dl>
-      </li>
+      <% current_user.incoming_donations.last(5).each do |donation| %>
+        <li class="icon_dtls">
+          <dl class="mod_icon">
+            <dt><i class="fa fa-arrow-left"></i> Incoming</dt>
+            <dd><%= humanized_money_with_symbol donation.ammount / 100.00 %></dd>
+          </dl>
+        </li>
+      <% end %>
 
-      <li class="icon_dtls">
-        <dl class="mod_icon">
-          <dt><i class="fa fa-bars"></i> Date</dt>
-          <dd>21 Jan, 2014</dd>
-        </dl>
-      </li>
-
-      <li class="icon_dtls">
-        <dl class="mod_icon">
-          <dt><i class="fa fa-bars"></i> Date</dt>
-          <dd>21 Jan, 2014</dd>
-        </dl>
-      </li>
-
-      <li class="icon_dtls">
-        <dl class="mod_icon">
-          <dt><i class="fa fa-bars"></i> Date</dt>
-          <dd>21 Jan, 2014</dd>
-        </dl>
-      </li>
     </ul>
 
 
