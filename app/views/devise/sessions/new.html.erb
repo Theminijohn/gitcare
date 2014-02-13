@@ -1,28 +1,74 @@
-<div class="form_backg">
-  <div class="main-form">
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <div class="form-group">
-        <%= f.email_field :email, class: "form-control", :autofocus => "true", :placeholder => "Email", :tabindex => "1" %>
-      </div>
-      <div class="form-group">
-        <%= f.password_field :password, class: "form-control", :placeholder => "Password", :tabindex => "2" %>
-      </div>
+<!--<div class="form_backg">-->
+  <!--<div class="main-form">-->
+    <!--<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>-->
+      <!--<div class="form-group">-->
+        <!--<%= f.email_field :email, class: "form-control", :autofocus => "true", :placeholder => "Email", :tabindex => "1" %>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<%= f.password_field :password, class: "form-control", :placeholder => "Password", :tabindex => "2" %>-->
+      <!--</div>-->
 
-      <div class="form-group">
-        <div class="checkbox">
-          <%= f.check_box :remember_me, :tabindex => "3" %>
-          <%= f.label :remember_me %>
+      <!--<div class="form-group">-->
+        <!--<div class="checkbox">-->
+          <!--<%= f.check_box :remember_me, :tabindex => "3" %>-->
+          <!--<%= f.label :remember_me %>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="form-group">-->
+        <!--<%= f.submit "Sign in", class: "btn btn-custom btn-block", :tabindex => "4" %>-->
+      <!--</div>-->
+      <!--<div class="shared_links">-->
+        <!--<%= link_to "Having troubles ?", new_user_password_path, class: "pull-left", :tabindex => "5" %>-->
+        <!--<%= link_to "Don't have an account?", new_user_registration_path, class: "pull-right", :tabindex => "6" %>-->
+      <!--</div>-->
+    <!--<% end %>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<div class="gtcr_lgn_frm">
+  <div class="inner">
+
+    <div class="col-md-6 prm">
+      <span>
+        Help inspiring Developers get shit done. Start today
+      </span>
+      <a href="#" id="ad-image"></a>
+      <div class="prm_inf">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam
+      </div>
+    </div>
+
+    <div class="col-md-6 lgn_r">
+      <span>Login</span>
+      <br>
+      <br>
+      <br>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+        <div class="form-group">
+          <%= f.email_field :email, class: "form-control", :autofocus => "true", :placeholder => "Email", :tabindex => "1" %>
         </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.submit "Sign in", class: "btn btn-custom btn-block", :tabindex => "4" %>
-      </div>
-      <div class="shared_links">
-        <%= link_to "Having troubles ?", new_user_password_path, class: "pull-left", :tabindex => "5" %>
-        <%= link_to "Don't have an account?", new_user_registration_path, class: "pull-right", :tabindex => "6" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <%= f.password_field :password, class: "form-control", :placeholder => "Password", :tabindex => "2" %>
+        </div>
+
+        <div class="form-group pull-right">
+          <%= f.submit "Sign in", class: "btn btn-custom", :tabindex => "4" %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="clearfix"></div>
+
   </div>
 </div>
 
+<div class="undr_lgn_frm">
+  Don't have an Account? <%= link_to "Sign up", new_user_registration_path %>
+</div>
