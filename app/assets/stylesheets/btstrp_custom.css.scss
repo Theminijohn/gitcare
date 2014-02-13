@@ -11,7 +11,7 @@ $brand-info:                      #2980b9;
 @import 'bootstrap';
 
 body {
-  background: url("http://i.imgur.com/GXeVwWj.png") repeat;
+  background-color: #edeff0;
 }
 
 // BTN Override
@@ -35,12 +35,8 @@ body {
   font-weight: bold;
 }
 
-// Navbar
-.navbar-default {
-  background: url("//viggo.zendesk.tv/assets/images/l-chrome/master-bg2.png") repeat;
-}
 
-// Here we say: On viewports 1200px or larger - set container max-width to 970px.
+// Here we say: On viewports 1200px or larger - set container max-width to 1000px.
 // This will overwrite the standard class that currently sets max-width to 1170px for that range.
 @media (min-width: 1200px) {
   .container{
@@ -50,8 +46,23 @@ body {
 
 // Dont push Nav Bar Items so far apart
 .nav > li > a {
-  position: relative;
-  display: block;
-  padding: 10px 10px;
+  padding-right: 10px;
+}
+
+
+.gtcr_nav_bar {
+  margin-top: 20px;
+  background-color: #f4f4f4;
+  background: -webkit-linear-gradient(#f7f7f7, #ececec);
+  background: linear-gradient(#f9f9f9, #f0f0f0);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+  border-left: 1px solid #d4d4d4;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.17);
+  border-left: 1px solid #d4d4d4;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
