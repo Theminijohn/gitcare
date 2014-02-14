@@ -229,76 +229,6 @@
 }
 
 
-/*Dashboard Wallet Module*/
-.gtcr_wllt_mod {
-  margin-bottom: 20px;
-  color: #706c66;
-  font-size: 12px;
-  border: 1px solid #E0DEDB;
-  border-radius: 3px;
-  cursor: default;
-  height: 91px;
-  opacity: 1;
-  overflow: hidden;
-  -webkit-transition: height .2s,opacity .1s,margin .2s;
-  -moz-transition: height .2s,opacity .1s,margin .2s;
-  -ms-transition: height .2s,opacity .1s,margin .2s;
-  -o-transition: height .2s,opacity .1s,margin .2s;
-  transition: height .2s,opacity .1s,margin .2s;
-}
-
-.gtcr_wllt_mod:after {
-  clear: both;
-}
-
-.gtcr_wllt_mod .wllt_header {
-  padding-left: 10px;
-  height: 30px;
-  line-height: 34px;
-}
-
-.gtcr_wllt_mod .wllt_numbers {
-  padding-top: 10px;
-  padding-left: 10px;
-  height: 100%;
-  position: relative;
-  border-top: 1px solid #E0DEDB;
-  background: rgba(209,205,196,.32);
-}
-
-.gtcr_wllt_mod .wllt_numbers:before {
-  width: 8px;
-  height: 8px;
-  background: #e0dedb;
-  background: rgba(88,86,82,.1);
-  margin-left: -4px;
-  top: -4px;
-}
-
-.gtcr_wllt_mod .wllt_numbers:after {
-  width: 10px;
-  background: #f5f4f1;
-  margin-left: -5px;
-  top: -8px;
-  height: 10px;
-}
-
-.gtcr_wllt_mod .wllt_numbers:before, .gtcr_wllt_mod .wllt_numbers:after {
-  content: "";
-  position: absolute;
-  left: 25px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.gtcr_wllt_mod .wllt_numbers span {
-  font-size: 25px;
-  //color: #27ae60;
-}
-
 // Span 3 Profile Overview
 .prf_db_ov {
   img {
@@ -332,4 +262,107 @@
   }
 }
 
+// Total Wallet Ammoun
+.gtcr_ttl_wllt_dash {
+  position: relative;
+  i {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 7px;
+    top: 0;
+    right: 0;
+    left: auto;
+    color: #6c7487;
+  }
+  .db_ov_layer {
+    padding: 1px 1.5em 1.5em 1.5em;
+    color: #6c7487;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    .ttl_ammnt{
+      margin-right: -1em;
+      margin-bottom: .75em;
+      margin-left: -1em;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: .75em;
+      font-size: 1em;
+    }
+    .prf_ttl {
+      color: #ccc;
+      font-size: 20px;
+    }
+  }
+}
 
+// Incoming Revenue
+.gtcr_incoming_dash {
+  position: relative;
+  i {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 7px;
+    top: 0;
+    right: 0;
+    left: auto;
+    color: #6c7487;
+  }
+  .db_ov_layer {
+    padding: 1px 1.5em 1.5em 1.5em;
+    color: #6c7487;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    .ttl_ammnt{
+      margin-right: -1em;
+      margin-bottom: .75em;
+      margin-left: -1em;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: .75em;
+      font-size: 1em;
+    }
+    .prf_ttl {
+      color: #ccc;
+      font-size: 20px;
+    }
+  }
+}
+
+// Spendings Outgoing
+.gtcr_outgoing_dash {
+  position: relative;
+  i {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 7px;
+    top: 0;
+    right: 0;
+    left: auto;
+    color: #6c7487;
+  }
+  .db_ov_layer {
+    padding: 1px 1.5em 1.5em 1.5em;
+    color: #6c7487;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    .ttl_ammnt{
+      margin-right: -1em;
+      margin-bottom: .75em;
+      margin-left: -1em;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: .75em;
+      font-size: 1em;
+    }
+    .prf_ttl {
+      color: #ccc;
+      font-size: 20px;
+    }
+  }
+}

@@ -29,10 +29,9 @@
 
 
 
-
-
-
   </div>
+
+
 
   <div class="col-md-3">
 
@@ -45,18 +44,37 @@
       </div>
     </div>
 
-
-    <!-- Dashboard Wallet Module -->
-    <div class="gtcr_wllt_mod">
-      <header class="wllt_header">
-        <span><b><i class="fa fa-dollar"></i></b> Total Wallet Ammount</span>
-      </header>
-      <div class="wllt_numbers center">
-      <span>
-        <%= humanized_money_with_symbol current_user.total_convert %>
-      </span>
+    <div class="gtcr_ttl_wllt_dash">
+      <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#TotalWallet' do %>
+        <i class="fa fa-question"></i>
+      <% end %>
+      <div class="db_ov_layer center">
+        <h1 class="ttl_ammnt">Total Wallet Ammount</h1>
+        <span class="prf_ttl"><%= humanized_money_with_symbol current_user.total_convert %></span>
       </div>
     </div>
+
+    <div class="gtcr_incoming_dash">
+      <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#TotalIncome' do %>
+        <i class="fa fa-question"></i>
+      <% end %>
+      <div class="db_ov_layer center">
+        <h1 class="ttl_ammnt">Your Income</h1>
+        <span class="prf_ttl"><%= humanized_money_with_symbol current_user.incoming_convert %> <small>/week</small></span>
+      </div>
+    </div>
+
+    <div class="gtcr_outgoing_dash">
+      <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#TotalSpendings' do %>
+        <i class="fa fa-question"></i>
+      <% end %>
+      <div class="db_ov_layer center">
+        <h1 class="ttl_ammnt">Your Support</h1>
+        <span class="prf_ttl"><%= humanized_money_with_symbol current_user.outgoing_convert %> <small>/week</small></span>
+      </div>
+    </div>
+
+
 
     <ul class="gtcr_mod" id="dsbrd_mod_b">
       <% current_user.outgoing_donations.last(5).each do |donation| %>
@@ -80,33 +98,6 @@
       <% end %>
     </ul>
 
-
-    <!-- Dashboard Revenue Module -->
-    <div class="gtcr_rvn_mod">
-      <header class="rvn_header">
-        <span><b><i class="fa fa-dollar"></i></b> Total revenue Income</span>
-      </header>
-      <div class="rvn_numbers center">
-      <span>
-        <%= humanized_money_with_symbol current_user.incoming_convert %>
-      </span>
-      </div>
-    </div>
-
-    <!-- Dashboard Patron Module -->
-    <div class="gtcr_ptrn_mod">
-      <header class="ptrn_header">
-        <span><b><i class="fa fa-dollar"></i></b> Total spendings Outcome</span>
-      </header>
-      <div class="ptrn_numbers center">
-      <span>
-        <%= humanized_money_with_symbol current_user.outgoing_convert %>
-      </span>
-      </div>
-    </div>
-
-
-
     <div class="verify_account">
       <h2>Verify your Account</h2>
       <hr class="verify_hr">
@@ -121,3 +112,69 @@
   </div>
 
 </div>
+
+
+<!-- Wallet Modal -->
+<div class="modal fade" id="TotalWallet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title center" id="myModalLabel">Your Wallet Ammount</h4>
+      </div>
+      <div class="modal-body">
+        Gitcare Wallet = The $ a user has either from donations or transferred
+        from his Credit Card. <br>
+        <br>
+        This Ammoun grows with the donations hes getting / week and manual transactions
+        from the users credit card.
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-custom">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Income Modal -->
+<div class="modal fade" id="TotalIncome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title center" id="myModalLabel">Your Income</h4>
+      </div>
+      <div class="modal-body">
+        This Displays the total ammount a user get's per Week (/week) and nothing else.
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-custom">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Spendings Modal -->
+<div class="modal fade" id="TotalSpendings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title center" id="myModalLabel">Your Support</h4>
+      </div>
+      <div class="modal-body">
+        This Displays the total ammount a user is spending to other users per week.
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-custom">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+

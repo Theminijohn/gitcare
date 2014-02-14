@@ -36,6 +36,18 @@ body {
   font-weight: bold;
 }
 
+// Alert-Info ReDesign
+.alert-info {
+  color: #264c72;
+  border: 1px solid #a0cde7;
+  border-radius: 3px;
+  background-color: #d9edf7;
+  background: -moz-linear-gradient(#d8ebf8, #d0e3ef);
+  background: -webkit-linear-gradient(#d8ebf8, #d0e3ef);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8ebf8', endColorstr='#d0e3ef')";
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
 
 // Here we say: On viewports 1200px or larger - set container max-width to 1000px.
 // This will overwrite the standard class that currently sets max-width to 1170px for that range.

@@ -28,13 +28,13 @@
         </div>
       <% else %>
         <% if user_signed_in? %>
-          <%= link_to '#', class: "btn btn-custom pull-right", 'data-toggle' => 'modal', 'data-target' => '#DonationModal' do %>
-            <i class="fa fa-heart"></i> Support
-          <% end %>
+          <ul class="tags blue pull-right" style="list-style: none">
+            <li><a href="#"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
+          </ul>
         <% else %>
-          <%= link_to '#', class: "btn btn-custom pull-right", 'data-toggle' => 'modal', 'data-target' => '#SignInToSupport' do %>
-            <i class="fa fa-heart"></i> Support
-          <% end %>
+          <ul class="tags blue pull-right" style="list-style: none">
+            <li><a href="#"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
+          </ul>
         <% end %>
       <% end %>
 
