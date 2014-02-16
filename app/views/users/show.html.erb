@@ -29,7 +29,7 @@
       <% else %>
         <% if user_signed_in? %>
           <ul class="tags blue pull-right" style="list-style: none">
-            <li><a href="#"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#testing"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
           </ul>
         <% else %>
           <ul class="tags blue pull-right" style="list-style: none">
@@ -207,6 +207,34 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="testing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for @user.outgoing_donations.new, url: give_donation_path(recipient_id: @user.id), html: {remote: true, role: 'form'} do |f| %>
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Donate to <%= @user.username %></h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <%= f.number_field :ammount, class: 'form-control', min: 0 %>
+          </div>
+          <div class="form-group">
+            <%= f.select :donation_type, @donation_types, class: 'form-control', min: 0 %>
+          </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <%= f.submit 'Donate', class: 'btn btn-custom' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 
