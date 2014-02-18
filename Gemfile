@@ -20,6 +20,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'thin'                                 # better webserver
 gem 'quiet_assets', :group => :development # hide assets from development logs !!!!!!!
 gem 'money-rails'                          # money conversions from integers
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #############
 
 # Authorization

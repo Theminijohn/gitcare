@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 880e5b539cf221326c1bddfdaa56a135ba236282
+  specs:
+    stripe (1.10.1)
+      json (~> 1.8.1)
+      mime-types (~> 1.25)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -160,6 +169,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.1.1)
     ref (1.0.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     role_model (0.8.1)
     sass (3.2.14)
     sass-rails (4.0.1)
@@ -227,6 +238,7 @@ DEPENDENCIES
   role_model
   sass-rails (~> 4.0.0)
   sqlite3
+  stripe!
   therubyracer
   thin
   turbolinks

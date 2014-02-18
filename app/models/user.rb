@@ -12,21 +12,6 @@ class User < ActiveRecord::Base
   has_many :outgoing_donations, class_name: 'Donation', foreign_key: :user_id
   has_many :incoming_donations, class_name: 'Donation', foreign_key: :recipient_id
 
-  # Convert to 0.00
-  # ----------------------------------------------------------------------------
-  def incoming_convert
-    self.incoming_donations.sum(:ammount) / 100.00
-  end
-
-  def outgoing_convert
-    self.outgoing_donations.sum(:ammount) / 100.00
-  end
-
-  def total_convert
-    self.wallet.total_ammount / 100.00
-  end
-  # ----------------------------------------------------------------------------
-
   validates :first_name, :presence => true
   validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 3 }
   validates :slogan, :length => { :maximum => 200 }
@@ -50,11 +35,34 @@ class User < ActiveRecord::Base
   roles_attribute :roles_mask
   roles :admin, :banned, :suspicious
 
-  after_create :create_wallet
+  before_save :create_stripe_customer
+  # after_create :create_wallet
 
-  def create_wallet
-    Wallet.create(user_id: self.id, total_ammount: 0)
+  # def create_wallet
+  #   Wallet.create(user_id: self.id, total_ammount: 0)
+  # end
+
+  def create_stripe_customer
+    customer = Stripe::Customer.create(email: self.email, plan: 'free', account_balance: 0)
+    self.customer_id = customer.id
   end
+
+  # Convert to 0.00
+  # ----------------------------------------------------------------------------
+  def incoming_convert
+    # self.incoming_donations.sum(:ammount) / 100.00
+    0
+  end
+
+  def outgoing_convert
+    # self.outgoing_donations.sum(:ammount) / 100.00
+    0
+  end
+
+  def total_convert
+    Stripe::Customer.retrieve(self.customer_id).account_balance
+  end
+  # ----------------------------------------------------------------------------
 
   def donate_to(recipient, ammount)
     # create outgoing donation
