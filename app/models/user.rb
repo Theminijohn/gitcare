@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   roles_attribute :roles_mask
   roles :admin, :banned, :suspicious
 
-  before_save :create_stripe_customer
+  before_create :create_stripe_customer
   # after_create :create_wallet
 
   # def create_wallet
