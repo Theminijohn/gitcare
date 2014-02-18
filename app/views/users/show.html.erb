@@ -28,9 +28,11 @@
         </div>
       <% else %>
         <% if user_signed_in? %>
+          <% if current_user.email != @user.email %>
           <ul class="tags blue pull-right" style="list-style: none">
             <li><a href="#" data-toggle="modal" data-target="#testing"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
           </ul>
+          <% end %>
         <% else %>
           <ul class="tags blue pull-right" style="list-style: none">
             <li><a href="#"> <i class="fa fa-heart"></i> Support <span>160</span></a></li>
