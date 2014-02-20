@@ -36,14 +36,15 @@ class User < ActiveRecord::Base
   roles :admin, :banned, :suspicious
 
   before_create :create_stripe_customer
-  # after_create :create_wallet
+  after_create :create_wallet
 
-  # def create_wallet
-  #   Wallet.create(user_id: self.id, total_ammount: 0)
-  # end
+  def create_wallet
+    Wallet.create(user_id: self.id, total_ammount: 0)
+  end
 
   def create_stripe_customer
-    customer = Stripe::Customer.create(email: self.email, plan: 'free', account_balance: 0)
+    customer = Stripe::Customer.create(email: self.email, account_balance: 0,
+      description: "id: #{self.id}")
     self.customer_id = customer.id
   end
 

@@ -3,9 +3,22 @@ class DonationsController < ApplicationController
 
   def give_donation
     recipient = User.find(params[:recipient_id])
-    ammount = params[:donation][:ammount]
-    if recipient.present? && ammount.present?
-      current_user.donate_to(recipient, ammount)
+    amount = params[:donation][:ammount]
+
+    if recipient.present? && amount.present?
+      current_user.donate_to(recipient, amount)
+
+      Stripe::Plan.create(
+        :amount => amount,
+        :interval => 'month',
+        :name => "Donation to #{recipient.customer_id}",
+        :currency => 'usd',
+        :id => "donation_to_cusomer_#{recipient.customer_id}"
+      )
+
+      customer = Stripe::Customer.retrieve(current_user.customer_id)
+      customer.subscriptions.create(:plan => "donation_to_cusomer_#{recipient.customer_id}")
+
     else
       @error = "Please add ammount"
     end
