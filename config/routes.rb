@@ -1,4 +1,5 @@
 Gitcare::Application.routes.draw do
+  resources :charges
 
   root 'pages#home'
 
@@ -19,6 +20,8 @@ Gitcare::Application.routes.draw do
   # Pages
   get 'about' => 'pages#about'
   get 'dashboard' => 'pages#dashboard'
+  get 'dashboard/add_to_wallet' => 'charges#add_to_wallet', as: :add_to_wallet
+  post 'dashboard/add_amount_to_wallet' => 'charges#add_amount_to_wallet', as: :add_amount_to_wallet
   get 'almost_done' => 'pages#almost_done'
 
   # Social Connections

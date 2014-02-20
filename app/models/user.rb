@@ -59,8 +59,8 @@ class User < ActiveRecord::Base
     0
   end
 
-  def total_convert
-    Stripe::Customer.retrieve(self.customer_id).account_balance
+  def account_balance
+    Stripe::Customer.retrieve(self.customer_id).account_balance / 100.00
   end
   # ----------------------------------------------------------------------------
 

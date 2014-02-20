@@ -61,7 +61,8 @@
       <% end %>
       <div class="db_ov_layer center">
         <h1 class="ttl_ammnt">Total Wallet Ammount</h1>
-        <span class="prf_ttl"><%= humanized_money_with_symbol current_user.total_convert %></span>
+        <span class="prf_ttl"><%= humanized_money_with_symbol current_user.account_balance %></span>
+        <p><%= link_to 'Add more', add_to_wallet_path %></p>
       </div>
     </div>
 
